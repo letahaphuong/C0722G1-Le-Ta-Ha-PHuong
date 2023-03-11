@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama-Danh sach khach hang</title>
+    <!--    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">-->
+    <link rel="stylesheet" href="customer/mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="vh-100 vw-100">
+    <div th:insert="~{home::header}"></div>
+    <div th:insert="~{home::navbar}"></div>
+    <div class="row text-center align-items-end" style="height: 10%">
+        <div class="col-lg-4"><p th:if="${mess}" th:text="${mess}" style="color: blue"></div>
+        <div class="col-lg-4"><h3 class="mb-4">FACILITY DETAIL</h3></div>
+        <div class="col-lg-4">
+            <form   class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-4">
+<!--                <button class="btn btn-outline-success" type="button" >-->
+<!--                    + Add-->
+<!--                </button>-->
+                <a th:href="@{/facility }" class="btn btn-outline-success">Back</a>
+            </form>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8" style="border-top: 2px solid black">
+            <div>
+                <form th:action="@{/facility/update}" th:object="${facility}" method="post">
+                    <div class="form-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label hidden>Id</label>
+                                    <input hidden class="form-control" name="id" placeholder="CUSTOMER ID *"
+                                           th:field="*{id}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="facilityType">Facility Type</label>
+                                    <select disabled required id="facilityType" th:field="*{facilityType}"
+                                            class="form-select"
+                                            aria-label="Default select example"
+                                            style="border-radius: 30px">
+                                        <option value="" selected>Chosce Facility</option>
+                                        <option  th:each="fac : ${facilityTypeList}"
+                                                th:value="${fac.id}"
+                                                th:text="${fac.name}">
+                                        </option>
+                                    </select>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="are">Are</label>
+                                    <input readonly required id="are" style="border-radius: 30px" class="form-control" type="number"
+                                           th:field="*{are}"/>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="cost">Cost</label>
+                                    <input readonly required id="cost" style="border-radius: 30px" class="form-control" type="number"
+                                           th:field="*{cost}"/>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="maxPeoPel">Max People</label>
+                                    <input readonly required id="maxPeoPel" style="border-radius: 30px" class="form-control"
+                                           type="number"
+                                           th:field="*{maxPeoPel}"/>
+                                </div>
+                                <div class="form-group" id="numberOfFloorHide">
+                                    <br>
+                                    <label for="numberOfFloors">Number Of Floors</label>
+                                    <input readonly required id="numberOfFloors" style="border-radius: 30px" class="form-control"
+                                           type="number"
+                                           th:value="0" th:field="*{numberOfFloors}"/>
+                                </div>
+                                <div class="form-group " id="facilityFree">
+                                    <br>
+                                    <label for="facilityFrees">Facility Free</label>
+                                    <input disabled  id="facilityFrees" style="border-radius: 30px" class="form-control"
+                                           type="text"
+                                           th:value="0" th:field="*{facilityFree}"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Facility Name</label>
+                                    <input readonly  id="name" style="border-radius: 30px"
+                                           class="form-control" type="text"
+                                           th:field="*{name}"/>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="rentType">Rent Type</label>
+                                    <select disabled  id="rentType" th:field="*{rentType}" class="form-select"
+                                            aria-label="Default select example"
+                                            style="border-radius: 30px">
+                                        <option readonly th:each="rent : ${rentTypeList}"
+                                                th:value="${rent.id}"
+                                                th:text="${rent.name}">
+                                        </option>
+                                    </select>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="standardRoom">Standard Room</label>
+                                    <input readonly required id="standardRoom" style="border-radius: 30px" class="form-control"
+                                           type="text"
+                                           th:field="*{standardRoom}"/>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="descriptionOtherConvenience">Description Other Convenience</label>
+                                    <input readonly required id="descriptionOtherConvenience" style="border-radius: 30px"
+                                           class="form-control" type="text"
+                                           th:field="*{descriptionOtherConvenience}"/>
+                                </div>
+                                <div class="form-group " id="poolAreaHide">
+                                    <br>
+                                    <label for="poolArea">Pool Area</label>
+                                    <input readonly required id="poolArea" style="border-radius: 30px" class="form-control"
+                                           type="text"
+                                           th:value="0" th:field="*{poolArea}"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+
+                <!--                <a th:href="@{/customer(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}">Previous</a>-->
+<!--                <span th:text="${customerList.number + 1}+'/'+${customerList.totalPages}"></span>-->
+<!--                <a th:href="@{/customer(page=${customerList.number + 1})}" th:if="${customerList.hasNext()}">Next</a>-->
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+<footer class="bg-light text-center text-lg-start position-fixed" style="height: 5%;width: 100%">
+    <div class="text-center text-white p-3" style="background-color:#046056 ;">
+        © 2022 Phuong Le Ta Ha
+    </div>
+</footer>
+<!--<div th:insert="~{home::footer}"></div>-->
+</div>
+
+<!-- REMOVE -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabelRemove"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
+                <h5 class="modal-title text-white" id="exampleModalLabelRemove">Customer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <span>Are you sure to delete:  <span style="color: #db365d " id="name"></span></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form th:action="@{/customer/delete}" method="post">
+                    <input type="hidden"  name="id" id="idInput">
+                    <button class="btn btn-primary">DELETE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Notification success-->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="...">
+            <strong class="me-auto">Notification</strong>
+            <small>just now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Successful!
+        </div>
+    </div>
+</div>
+<!-- Notification LOG OUT-->
+<div class="modal fade" id="exampleModalLogOut" tabindex="-1" aria-labelledby="exampleModalLabelLogOut"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
+                <h5 class="modal-title text-white" id="exampleModalLabelLogOut">Customer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <p class="mt-2 ms-3">Are you sure to log-out?</p>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="liveToastBtnLogOut">Keep Log-Out</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">var toastTrigger = document.getElementById('liveToastBtn')
+var toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+    toastTrigger.addEventListener('click', function () {
+        var toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+    })
+}</script>
+<script th:inline="javascript">
+    function idRemove(id, name) {
+        debugger
+        document.getElementById("idInput").value = id;
+        document.getElementById("name").innerText = name;
+    }
+</script>
+</html>

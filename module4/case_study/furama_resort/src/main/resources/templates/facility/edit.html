@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama-Danh sach facility</title>
+    <link rel="stylesheet" href="/static/css/mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="vh-100 vw-100">
+    <div th:insert="~{home::header}"></div>
+    <div th:insert="~{home::navbar}"></div>
+    <div class="row text-center"
+         style="height: 75%">
+        <div class="row ">
+            <div class="col-lg-1">
+                <button class="btn btn-outline-success mt-5" type="submit" onclick="location.href='/facility'">Back
+                </button>
+            </div>
+            <div class="col-lg-10">
+
+                <div class="row m-5">
+                    <div class="container register-form">
+                        <div class="form">
+                            <div class="note align-items-center d-flex justify-content-center">
+                                <h2>EDIT FACILITY</h2>
+                            </div>
+                            <form th:action="@{/facility/update}" th:object="${facility}" method="post">
+                                <div class="form-content">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label hidden>Id</label>
+                                                <input hidden class="form-control" name="id" placeholder="CUSTOMER ID *"
+                                                       th:field="*{id}"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="facilityTypeEdit">Facility Type</label>
+                                                <select required id="facilityTypeEdit" th:field="*{facilityType}"
+                                                        class="form-select"
+                                                        aria-label="Default select example"
+                                                        style="border-radius: 30px">
+                                                    <option value="" selected>Choose Facility</option>
+                                                    <option th:each="fac : ${facilityTypeList}"
+                                                            th:value="${fac.id}"
+                                                            th:text="${fac.name}">
+                                                    </option>
+                                                </select>
+                                                <p th:errors="*{facilityType}" class="text-danger"></p>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="are">Are</label>
+                                                <input required id="are" style="border-radius: 30px"
+                                                       class="form-control" type="number"
+                                                       th:field="*{are}"/>
+                                                <p th:errors="*{are}" class="text-danger"></p>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="cost">Cost</label>
+                                                <input required id="cost" style="border-radius: 30px"
+                                                       class="form-control" type="number"
+                                                       th:field="*{cost}"/>
+                                                <p th:errors="*{cost}" style="color: red"></p>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="maxPeoPel">Max People</label>
+                                                <input required id="maxPeoPel" style="border-radius: 30px"
+                                                       class="form-control"
+                                                       type="number"
+                                                       th:field="*{maxPeoPel}"/>
+                                                <p th:errors="*{maxPeoPel}" style="color: red"></p>
+
+                                            </div>
+                                            <div class="form-group" id="numberOfFloorHide">
+                                                <br>
+                                                <label th:for="numberOfFloors">Number Of Floors</label>
+                                                <input required style="border-radius: 30px" class="form-control"
+                                                       type="number"
+                                                       th:value="0" th:field="*{numberOfFloors}"/>
+                                                <p th:errors="*{numberOfFloors}" style="color: red"></p>
+
+                                            </div>
+                                            <div class="form-group " id="facilityFreeHide">
+                                                <br>
+                                                <label th:for="facilityFree">FacilityFre Free</label>
+                                                <input style="border-radius: 30px" class=" form-control"
+                                                       type="text" th:field="*{facilityFree}"/>
+                                                <p th:errors="*{facilityFree}" style="color: red"></p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="name">Facility Name</label>
+                                                <input required id="name" style="border-radius: 30px"
+                                                       class="form-control" type="text"
+                                                       th:field="*{name}"/>
+                                                <p th:errors="*{name}" class="text-danger"></p>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="rentType">Rent Type</label>
+                                                <select required id="rentType" th:field="*{rentType}"
+                                                        class="form-select"
+                                                        aria-label="Default select example"
+                                                        style="border-radius: 30px">
+                                                    <option th:each="rent : ${rentTypeList}"
+                                                            th:value="${rent.id}"
+                                                            th:text="${rent.name}">
+                                                    </option>
+                                                </select>
+                                                <p th:errors="*{rentType}" class="text-danger"></p>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="standardRoom">Standard Room</label>
+                                                <input required id="standardRoom" style="border-radius: 30px"
+                                                       class="form-control"
+                                                       type="text"
+                                                       th:field="*{standardRoom}"/>
+                                                <p th:errors="*{standardRoom}" class="text-danger"></p>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="descriptionOtherConvenience">Description Other
+                                                    Convenience</label>
+                                                <input required id="descriptionOtherConvenience"
+                                                       style="border-radius: 30px"
+                                                       class="form-control" type="text"
+                                                       th:field="*{descriptionOtherConvenience}"/>
+                                                <p th:errors="*{descriptionOtherConvenience}" class="text-danger"></p>
+                                            </div>
+                                            <div class="form-group poolAreaHide" id="poolAreaHide">
+                                                <br>
+                                                <label th:for="poolArea">Pool Area</label>
+                                                <input required style="border-radius: 30px" class=" form-control"
+                                                       type="text" th:value="0" th:field="*{poolArea}"/>
+                                                <p th:errors="*{poolArea}" class="text-danger"></p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-outline-success">Submit</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div></div>
+
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<script>
+    window.onload = function checkFacilityType() {
+        let facilityType = $("#facilityType").val();
+        if ($('#facilityTypeEdit').val() === '1') {
+            $('#facilityFreeHide').hide();
+            $('#poolAreaHide').show();
+            $('#numberOfFloorHide').show();
+            $('#facilityFree').val("")
+            debugger
+        }
+        if ($('#facilityTypeEdit').val() === '2') {
+            $('#poolAreaHide').hide();
+            $('#poolArea').val(0.0);
+            $('#numberOfFloorHide').show();
+            $('#facilityFreeHide').hide();
+            $('#facilityFree').val("");
+        }
+        if ($('#facilityTypeEdit').val() === '3') {
+            $('#poolAreaHide').hide();
+            $('#poolArea').val(0.0);
+            $('#facilityFreeHide').show();
+            $('#numberOfFloorHide').hide();
+            $('#numberOfFloors').val(0);
+
+        }
+    }
+    $('#facilityTypeEdit').change(function () {
+        debugger
+        if ($('#facilityTypeEdit').val() === '1') {
+            $('#facilityFree').val("Không có Dịch Vụ Miễn phí")
+            $('#facilityFreeHide').hide();
+            $('#poolAreaHide').show();
+            $('#numberOfFloorHide').show();
+        }
+        if ($('#facilityTypeEdit').val() === '2') {
+            $('#poolAreaHide').hide();
+            $('#poolArea').val(0.0);
+            $('#numberOfFloorHide').show();
+            $('#facilityFreeHide').hide();
+            $('#facilityFree').val("Không có Dịch Vụ Miễn phí");
+        }
+        if ($('#facilityTypeEdit').val() === '3') {
+            $('#poolAreaHide').hide();
+            $('#poolArea').val(0.0);
+            $('#facilityFreeHide').show();
+            $('#numberOfFloorHide').hide();
+            $('#numberOfFloors').val(0);
+
+        }
+    });
+
+    function idRemove(id) {
+        document.getElementById("idInput").value = id;
+    }
+</script>
+</html>

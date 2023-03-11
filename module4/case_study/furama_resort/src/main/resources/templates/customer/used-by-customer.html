@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama-Danh sach khach hang</title>
+    <!--    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">-->
+    <link rel="stylesheet" href="customer/mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="vh-100 vw-100">
+    <div th:insert="~{home::header}"></div>
+    <div th:insert="~{home::navbar}"></div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="row justify-content-center ">
+                <form class="d-flex justify-content-center  mt-3" action="">
+
+                    <input style="border-radius: 30px" class="form-control me-2" name="searchByName" type="search"
+                           placeholder="Enter Name" th:value="${searchByName}"
+                           aria-label="Search">
+
+                    <input style="border-radius: 30px" class="form-control me-2" name="email" type="search"
+                           placeholder="Enter Email"
+                           aria-label="Search" th:value="${email}">
+
+                    <select name="customerType" class="form-select"
+                            aria-label="Default select example" th:value="${customerTypeId}"
+                            style="border-radius: 30px">
+                        <option VALUE="">--Choose Customer Type--</option>
+                        <option th:each="customerType : ${customerTypes}"
+                                th:value="${customerType.id}" th:selected="${customerTypeId==customerType.id}"
+                                th:text="${customerType.name}">
+                        </option>
+                    </select>
+
+                    <button class="btn btn-outline-success m-2" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+
+
+    </div>
+    <div class="row text-center align-items-end" style="height: 10%">
+        <div class="col-lg-4"><p th:if="${mess}" th:text="${mess}" style="color: blue"></div>
+        <div class="col-lg-4"><h3 class="mb-4">LIST USED BY CUSTOMER</h3></div>
+        <div class="col-lg-4">
+            <form class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-4">
+                <!--                <button class="btn btn-outline-success" type="button" >-->
+                <!--                    + Add-->
+                <!--                </button>-->
+                <a th:href="@{/customer/used-by-customers}" class="btn btn-outline-success">Back</a>
+            </form>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8" style="border-top: 2px solid black">
+            <div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">CUSTOMER TYPE NAME</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">CONTRACT ID</th>
+                        <th scope="col">DATE OF BIRTH</th>
+                        <th scope="col">GENDER</th>
+                        <th scope="col">PHONE NUMBER</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">DETAIL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="cus,stt : ${UsedByCustomerList}">
+                        <tr>
+                            <td th:text="${stt.count} + ${UsedByCustomerList.number} * ${UsedByCustomerList.size}"></td>
+                            <td th:text="${cus.getCustomerTypeName()}"></td>
+                            <td th:text="${cus.getName()}"></td>
+                            <td th:text="${cus.getContractId()}"></td>
+                            <td th:text="${cus.getDateOfBirth()}"></td>
+                            <td th:if="${cus.isGender()}" th:text="Nam"></td>
+                            <td th:if="${cus.isGender()==false}" th:text="Nữ"></td>
+                            <td th:text="${cus.getPhoneNumber()}"></td>
+                            <td th:text="${cus.getEmail()}"></td>
+                            <td><a th:onclick="|(show('__${cus.getContractId()}__ '))|"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#getAttachFacility"
+                                   class="btn btn-outline-success">DETAIL</a></td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+                <a class="btn btn-outline-success"
+                   th:href="@{/customer/used-by-customers(page=${UsedByCustomerList.number - 1},searchByName=${searchByName},email=${email},customerType=${customerTypeId})}"
+                   th:if="${UsedByCustomerList.hasPrevious()}">Previous</a>
+                <span class="rounded-circle"
+                      th:text="${UsedByCustomerList.number + 1}+'|'+${UsedByCustomerList.totalPages}"></span>
+                <a class="btn btn-outline-success"
+                   th:href="@{/customer/used-by-customers(page=${UsedByCustomerList.number + 1},searchByName=${searchByName},email=${email},customerType=${customerTypeId})}"
+                   th:if="${UsedByCustomerList.hasNext()}">Next</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+<footer class="bg-light text-center text-lg-start position-fixed" style="height: 5%;width: 100%">
+    <div class="text-center text-white p-3" style="background-color:#046056 ;">
+        © 2022 Phuong Le Ta Ha
+    </div>
+</footer>
+<!--<div th:insert="~{home::footer}"></div>-->
+</div>
+<!-- SHOW LIST ATTACH FACILITY -->
+<div class="modal fade" id="getAttachFacility" tabindex="-1"
+     aria-labelledby="attachFacilityLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
+                <h5 class="modal-title text-white" id="attachFacilityLabel">Attach facility list</h5>
+                <button type="button" class="btn-close btn-outline-danger" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="row">
+                <div class="modal-body">
+                    <div class="row container">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">STT</th>
+                                <th scope="col">CONTRACT ID</th>
+                                <th scope="col">ATTACH FACILITY NAME</th>
+                                <th scope="col">STATUS</th>
+                                <th scope="col">QUANTITY</th>
+                                <th scope="col">UNITS</th>
+                            </tr>
+                            </thead>
+                            <tbody id="myBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal"><b>Close</b>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Notification LOG OUT-->
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">
+</script>
+<script>
+    function show(id) {
+        $.ajax({
+            url: 'http://localhost:8080/attach-facility/show/' + id,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                debugger
+                console.log(data);
+                let myTable = "";
+                for (let i = 0; i < data.length; i++) {
+                    myTable +=
+                        `
+                            <tr>
+                              <th scope="row ">${i + 1}</th>
+                              <td>${data[i].contractId}</td>
+                              <td>${data[i].attachFacilityName}</td>
+                              <td>${data[i].status}</td>
+                              <td>${data[i].quantity}</td>
+                              <td>${data[i].unit}</td>
+                            </tr>
+                        `
+                }
+                $("#myBody").empty();
+                $("#myBody").append(myTable);
+                // show mod
+
+            }
+        })
+    }
+
+</script>
+
+
+</html>
