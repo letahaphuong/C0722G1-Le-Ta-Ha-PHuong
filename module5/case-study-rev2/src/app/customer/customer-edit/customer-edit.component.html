@@ -1,0 +1,165 @@
+<app-header></app-header>
+<app-nav></app-nav>
+<div class="vh-100 vw-100">
+  <div class="row text-center"
+       style="height: 75%">
+    <div class="row ">
+      <div class="col-lg-1">
+        <button class="btn btn-outline-success mt-5" type="submit" routerLink='/customer'>Back
+        </button>
+      </div>
+      <div class="col-lg-10">
+
+        <div class="row m-5">
+          <div class="container register-form">
+            <div class="form">
+              <div class="note align-items-center d-flex justify-content-center">
+                <h2>EDIT CUSTOMER</h2>
+              </div>
+              <p if="${mess != null}" text="${mess}" style="color: blue">
+              <form [formGroup]="editForm" (ngSubmit)="update()" novalidate>
+                <div class="form-content">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div hidden class="form-group">
+                        <label for="id">Id</label>
+                        <input style="border-radius:30px" class="form-control" id="id" name="id"
+                               placeholder="CUSTOMER ID *" formControlName="id"
+                        />
+                        <br>
+                      </div>
+                      <div class="form-group">
+                        <label for="customerType" class="float-start">Customer Type Name :</label>
+                        <select id="customerType" name="customerType" class="form-select"
+                                [compareWith]="compareWith" formControlName="customerType"
+                                style="border-radius: 30px">
+                          <option *ngFor="let i of customerTypes" [ngValue]="i">{{i.name}}</option>
+                        </select>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="customerCode" class="float-start">Customer Code: </label>
+                        <span *ngIf="!customerCode?.valid && (customerCode?.dirty || customerCode?.touched)">
+                          <span [hidden]="!customerCode?.errors?.required">
+                            <span class="float-start" style="color: red"> Customer Code is not required</span>
+                          </span>
+                          <span [hidden]="!customerCode?.errors?.pattern">
+                            <span class="float-start" style="color: red"> Customer Code is not format</span>
+                          </span>
+                        </span>
+                        <input id="customerCode" style="border-radius: 30px" name="customerCode"
+                               formControlName="customerCode"
+                               class="form-control" type="text"
+                        />
+                      </div>
+
+                      <br>
+                      <div class="form-group">
+                        <label for="name" class="float-start">Name: </label>
+                        <span *ngIf="!name?.valid && (name?.dirty || name?.touched)">
+                          <span [hidden]="!name?.errors?.required">
+                            <span class="float-start" style="color: red"> Name is not required</span>
+                          </span>
+                          <span [hidden]="!name?.errors?.pattern">
+                            <span class="float-start" style="color: red"> Name is not format</span>
+                          </span>
+                        </span>
+                        <input id="name" style="border-radius: 30px" name="name" formControlName="name"
+                               class="form-control" type="text"
+                        />
+                      </div>
+
+                      <br>
+                      <div class="form-group">
+                        <label for="dateOfBirth" class="float-start">Date Of Birth: </label>
+                        <input id="dateOfBirth" style="border-radius: 30px"
+                               class="form-control"
+                               type="date" name="dateOfBirth" formControlName="dateOfBirth"
+                        />
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="gender" class="float-start">Gender: </label>
+                        <select id="gender" class="form-control form-select"
+                                aria-label="Default select example" name="gender" formControlName="gender"
+                                style="border-radius: 30px">
+                          <option [ngValue]="true">Nam</option>
+                          <option [ngValue]="false">Nữ</option>
+                        </select>
+                      </div>
+                      <br>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="idCard" class="float-start">Id Card: </label>
+                        <span *ngIf="!idCard?.valid && (idCard?.dirty || idCard?.touched)">
+                          <span [hidden]="!idCard?.errors?.required">
+                            <span style="color: red"> Id Card is not required</span>
+                          </span>
+                          <span [hidden]="!idCard?.errors?.pattern">
+                            <span style="color: red"> Id Card is not format</span>
+                          </span>
+                        </span>
+                        <input id="idCard" style="border-radius: 30px" name="idCard"
+                               class="form-control" type="text" formControlName="idCard"
+                        />
+                      </div>
+
+                      <br>
+                      <div class="form-group">
+                        <label for="phoneNumber" class="float-start">Phone Number: </label>
+                        <span *ngIf="!phoneNumber?.valid && (phoneNumber?.dirty || phoneNumber?.touched)">
+                          <span [hidden]="!phoneNumber?.errors?.required">
+                            <span class="float-start" style="color: red"> Phone Number is not required</span>
+                          </span>
+                          <span [hidden]="!phoneNumber?.errors?.pattern">
+                            <span class="float-start" style="color: red"> Phone Number is not format</span>
+                          </span>
+                        </span>
+                        <input id="phoneNumber" style="border-radius: 30px"
+                               class="form-control" name="phoneNumber" formControlName="phoneNumber"
+                               type="text"
+                        />
+                      </div>
+
+                      <br>
+                      <div class="form-group">
+                        <label for="email" class="float-start">Email: </label>
+                        <span *ngIf="!email?.valid && (email?.dirty || email?.touched)">
+                          <span [hidden]="!email?.errors?.required">
+                            <span class="float-start" style="color: red"> Email is not required</span>
+                          </span>
+                          <span [hidden]="!email?.errors?.pattern">
+                            <span class="float-start" style="color: red"> Email is not format</span>
+                          </span>
+                        </span>
+                        <input  id="email" style="border-radius: 30px"
+                                class="form-control" type="email" name="email" formControlName="email"
+                        />
+                      </div>
+
+                      <br>
+                      <div class="form-group">
+                        <label for="address" class="float-start">Address: </label>
+                        <input id="address" style="border-radius: 30px" name="address"
+                               class="form-control" type="text" formControlName="address"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <button [disabled]="!editForm.valid" type="submit" class="btn btn-outline-success">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+
+

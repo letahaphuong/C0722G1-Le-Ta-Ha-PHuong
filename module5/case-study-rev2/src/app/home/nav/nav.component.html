@@ -1,0 +1,96 @@
+<div class="row sticky-top" style="height: 5%">
+  <nav class="navbar navbar-expand-lg " style="background-color: #046056">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item ">
+            <a class="nav-link active text-white" aria-current="page" routerLink="/home"
+               style="color: #0000008c ">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a disabled class="nav-link dropdown-toggle text-white" (click)="employee()" id="navbarEmployee" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Employee
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarEmployee">
+              <li><a class="dropdown-item"
+                     href="#">Management</a>
+              </li>
+              <li><a class="dropdown-item"
+                     href="#">Staff</a>
+              </li>
+              <li><a class="dropdown-item"
+                     href="/employee">Show
+                All</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarCustomer" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Customer
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarCustomer">
+              <li><a class="dropdown-item"
+                     routerLink="/customer">Diamond</a>
+              </li>
+              <li><a class="dropdown-item"
+                     routerLink="/customer">Platinium</a>
+              </li>
+              <li><a class="dropdown-item"
+                     routerLink="/customer">Gold</a>
+              </li>
+              <li><a class="dropdown-item"
+                     routerLink="/customer">Silver</a>
+              </li>
+              <li><a class="dropdown-item"
+                     hrouterLink="/customer">Member</a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarService123" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Service
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarService">
+              <li><a class="dropdown-item"
+                     routerLink="/facility">Villa</a>
+              </li>
+              <li><a class="dropdown-item"
+                     routerLink="/facility">House</a>
+              </li>
+              <li><a class="dropdown-item"
+                     routerLink="/facility">Room</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown" id="clickContract">
+            <a class="nav-link dropdown-toggle text-white" href="@{/contract}"
+               id="navbarContract123123123" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Contract
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarContract">
+              <li><a class="dropdown-item" routerLink="/contract">Contract</a></li>
+              <li><a class="dropdown-item" routerLink="/contract">Attach Facility</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" routerLink="/contract">Contract Detail</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</div>
+

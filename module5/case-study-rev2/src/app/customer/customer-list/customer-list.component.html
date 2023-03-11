@@ -1,0 +1,94 @@
+<app-header></app-header>
+<app-nav></app-nav>
+<div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <div class="row justify-content-center ">
+      </div>
+    </div>
+    <div class="col-lg-3"></div>
+
+
+  </div>
+  <div class="row text-center align-items-end" style="height: 10%">
+    <div class="col-lg-4 d-flex mb-3">
+      <div class="col-lg-6"></div>
+      <!--      <div class="col-lg-6">-->
+      <!--        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"-->
+      <!--               placeholder="Enter name / id card / phone / email">-->
+      <!--      </div>-->
+      <div class="col-lg-6">
+        <input type="text" #name placeholder="name">
+        <input type="text" #email placeholder="email">
+        <select #customerType >
+          <option value="">Chọn</option>
+          <option *ngFor="let cusType of customerTypes" [value]="cusType.name"> {{cusType.name}}</option>
+        </select>
+        <button (click)="search(name.value,email.value,customerType.value)">search</button>
+      </div>
+    </div>
+    <div class="col-lg-4"><br>
+      <h3 class="mb-4">LIST CUSTOMER</h3></div>
+    <div class="col-lg-4">
+      <form class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-3">
+        <a routerLink="/customer/create" class="btn btn-outline-success">+ Add</a>
+      </form>
+
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8" style="border-top: 2px solid black">
+      <div>
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">CUSTOMER TYPE NAME</th>
+            <th scope="col">NAME</th>
+            <th scope="col">DATE OF BIRTH</th>
+            <th scope="col">ID CARD</th>
+            <th scope="col">GENDER</th>
+            <th scope="col">PHONE NUMBER</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">ADDRESS</th>
+            <th scope="col">EDIT</th>
+            <th scope="col">DELETE</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr
+            *ngFor="let cus of customers | paginate: { itemsPerPage: 6, currentPage:p} | filter:searchText;index as i">
+            <td>{{i + 1}}</td>
+            <td>{{cus.customerType?.name}}</td>
+            <td>{{cus.name}}</td>
+            <td>{{cus.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+            <td>{{cus.idCard}}</td>
+            <td>{{cus.gender ? 'Nam' : 'Nữ'}}</td>
+            <td>{{cus.phoneNumber}}</td>
+            <td>{{cus.email}}</td>
+            <td>{{cus.address}}</td>
+            <td>
+              <button [routerLink]="['/customer/edit',cus.id]" class="btn btn-danger">edit
+              </button>
+            </td>
+            <td>
+              <button (click)="temp = cus" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                delete
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event" class="float-end"></pagination-controls>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-2"></div>
+</div>
+<app-customer-delete [customer]="temp" (eventDelete)="reload()"></app-customer-delete>
+<app-footer></app-footer>
+
