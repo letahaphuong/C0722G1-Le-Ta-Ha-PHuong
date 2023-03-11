@@ -1,0 +1,64 @@
+.sidenav {
+    width: 130px;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    overflow-x: hidden;
+}
+
+.sidenav a {
+    font-family: sans-serif;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #046056;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: white;
+    background: #046056;
+}
+
+.main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+.content{
+    font-family:  sans-serif;
+}
+/*======= F1:CSS for form add and edit facility========*/
+/*.card-registration .select-input.form-control[readonly]:not([disabled]) {*/
+/*    font-size: 1rem;*/
+/*    line-height: 2.15;*/
+/*    padding-left: .75em;*/
+/*    padding-right: .75em;*/
+/*}*/
+/*.card-registration .select-arrow {*/
+/*    top: 13px;*/
+/*}*/
+/*====== F2:CSS for form add and edit facility======*/
+.note
+{
+    text-align: center;
+    height: 80px;
+    background: -webkit-linear-gradient(left, #046056, #ffffff);
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+}
+.form-content
+{
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+}
+.form-control{
+    border-radius:1.5rem;
+}

@@ -1,0 +1,274 @@
+/*màn hình điện thoai*/
+@media only screen and (max-width:740px ){
+    .col-s-1 {width: 8.33333%;}
+    .col-s-2 {width: 16.66667%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33333%;}
+    .col-s-5 {width: 41.66667%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33333%;}
+    .col-s-8 {width: 66.66667%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33333%;}
+    .col-s-11 {width: 91.66667%;}
+    .col-s-12 {width: 100%;}
+    /*tăng kích thước font cho dễ đọc*/
+    li{
+        font-size: 40px;
+        text-align: center;
+        color: white;
+    }
+    p{
+        font-size: 35px;
+        color: white;
+    }
+    .title{
+        font-size: 55px;
+        color: white;
+    }
+}
+/*Màn hinh laptop và máy tính bảng*/
+@media only screen and (min-width:741px)and (max-width:1240px){
+    .col-m-1 {width: 8.33333%;}
+    .col-m-2 {width: 16.66667%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33333%;}
+    .col-m-5 {width: 41.66667%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33333%;}
+    .col-m-8 {width: 66.66667%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33333%;}
+    .col-m-11 {width: 91.66667%;}
+    .col-m-12 {width: 100%;}
+}
+/*Màn hình máy tính pc và tivi smart*/
+@media only screen and (min-width:1241px){
+    .col-l-1 {width: 8.33333%;}
+    .col-l-2 {width: 16.66667%;}
+    .col-l-3 {width: 25%;}
+    .col-l-4 {width: 33.33333%;}
+    .col-l-5 {width: 41.66667%;}
+    .col-l-6 {width: 50%;}
+    .col-l-7 {width: 58.33333%;}
+    .col-l-8 {width: 66.66667%;}
+    .col-l-9 {width: 75%;}
+    .col-l-10 {width: 83.33333%;}
+    .col-l-11 {width: 91.66667%;}
+    .col-l-12 {width: 100%;}
+}
+nav, section{
+    display: flex;
+    flex-wrap: wrap;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Tahoma,Arial;
+}
+.btn {
+    border: 2px solid black;
+    background-color: #046056;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Green */
+.success {
+    border-color: #046056;
+    color: white;
+}
+
+
+.success:hover {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.row{
+    display: flex;
+}
+.head{
+    height:125px;
+}
+.head-link{
+    background-color: #046056 ;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    top: 0;
+    position: sticky;
+}
+.head-link ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.head-link ul li{
+    display: flex;
+    margin-left: 150px;
+}
+button{
+    font-family: sans-serif;
+    color: white;
+    background-color: #046056;
+}
+
+header{
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+}
+.header-ads{
+    border: 1px solid #046056;
+    height: 85px ;
+    width: 210px;
+}
+.header-address{
+    height: 85px ;
+    width: 210px;
+    font-size: 13px;
+    font-family: sans-serif;
+}
+.header-address a{
+    text-decoration: none;
+    color: dimgray;
+}
+.header-contact{
+    height: 85px ;
+    width: 210px;
+    font-size: 13px;
+    font-family: sans-serif;
+}
+nav{
+    height: 630px;
+}
+section{
+    height: 630px;
+    /*background-color: darkcyan;*/
+    right: 0;
+}
+footer{
+    height: 50px;
+    width: 100%;
+    background-color: #046056;
+    color: white;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+.left-section{
+    height: 630px;
+    float: left;
+}
+.right-section{
+    height: 630px;
+    float: right;
+    top: 0;
+
+}
+.card-new{
+    font-size: 13px;
+    border: 1px solid #046056;
+    box-shadow: 5px 10px whitesmoke;
+    padding: 5px;
+    justify-content: center;
+    margin-left: 40px;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+.card-room-type{
+    font-size: 13px;
+    border: 1px solid #046056;
+    background-color:  white;
+    height:65px ;
+    width: 124px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*color: #046056;*/
+    margin-left: 55px;
+    margin-top: 55px;
+}
+.success-left-right {
+    color:black;
+}
+
+
+.success-left-right:hover {
+    background-color: #046056;
+    color: white;
+}
+/*===============*/
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+}
