@@ -1,0 +1,31 @@
+h1 {
+    color: blue;
+    font-family:"Times New Roman",VnTime,Vinhan;
+    margin-bottom: 1px;
+}
+#p1 ,#p2 ,#p3{
+    text-indent: 50px;
+}
+#p0 {
+    margin-top: 1px;
+}
+#p0 {
+    margin-top: 1px;
+    color: darkblue;
+}#p1 {
+    color: chocolate;
+    /*background: lightcoral;*/
+    font-family: "Segoe UI Light";
+     font-size: 50px;
+}
+#p2 {
+    color: purple;
+    /*background: darkmagenta;*/
+    font-family:Garamond;
+}
+#p3 {
+    text-align: center;
+}
+div.div {
+    text-align: justify;
+}

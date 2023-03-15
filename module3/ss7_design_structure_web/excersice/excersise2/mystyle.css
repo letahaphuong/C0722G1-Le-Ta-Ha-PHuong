@@ -1,0 +1,110 @@
+body {
+    font-family: Arial;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header {
+    background-color: #373a3c;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+
+}
+
+header p {
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+}
+
+header ul {
+    display: inline-block;
+}
+
+header ul li {
+    width: 80px;
+    display: inline-block;
+}
+
+button {
+    position: relative;
+    left: 60%;
+}
+
+nav {
+    margin-top: 60px;
+    width: 20%;
+    background-color: #526069;
+    height: 540px;
+    float: left;
+}
+
+section {
+    width: 60%;
+    background-color: white;
+    float: left;
+    height: 500px;
+    margin: 80px 16px 16px 16px;
+}
+
+aside p {
+    text-align: center;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #526069;
+    height: 600px;
+
+}
+
+nav a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+
+
+}
+
+.card {
+    border: 1px solid white;
+    width: 200px;
+    text-align: center;
+    margin-top: 80px;
+    color: cornsilk;
+}
+
+.card p {
+    text-align: center;
+}
+
+.card a {
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+
+}
+
+footer {
+    position: fixed ;
+    background-color: #373a3c;
+    height: 50px;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    bottom: 0;
+}
+

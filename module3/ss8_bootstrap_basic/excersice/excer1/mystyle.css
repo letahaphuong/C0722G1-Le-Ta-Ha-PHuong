@@ -1,0 +1,41 @@
+*{
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Tahoma;
+
+}
+
+.header{
+    display: flex;
+    height: 50px;
+}
+
+.head-link{
+    display: flex;
+    height: 50px;
+}
+.content{
+    display: flex;
+    min-height: 100px;
+    align-items: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+
+}
+.photo{
+    border: 1px solid black;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.text-center{
+    height: 50px;
+   line-height: 50px;
+}
+.text-content{
+    font-family: "Times New Roman",Arial, Tahoma;
+    font-size: 20px;
+}
+

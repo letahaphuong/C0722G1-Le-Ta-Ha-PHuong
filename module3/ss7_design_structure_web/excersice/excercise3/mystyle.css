@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    background-color: darkgrey;
+    margin-bottom:5px;
+    display: flex;
+    align-items: center;
+}
+
+#head-link {
+    height: 30px;
+    width: 100%;
+    margin-bottom: 5px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    background-color: darkcyan;
+}
+#head-link a, p{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+}
+header img {
+    height: 60px;
+    width: 200px;
+}
+/*=====================*/
+@media only screen and (max-width: 992px) {
+    .column {
+        width: 50%;
+    }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media only screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
