@@ -1,0 +1,5 @@
+1,Nguyen van A,11/05/2013,false,A7,6.0
+5,Nguyen thị B,01/01/1999,false,A7,7.0
+4,Nguyen van AB,12/02/2000,false,A7,8.0
+3,Nguyen van V,13/01/2001,false,A7,4.0
+

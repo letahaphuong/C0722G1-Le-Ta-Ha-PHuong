@@ -1,0 +1,4 @@
+1,Nguyen van A,06/06/1555,false,Sff,10.0
+2,Nguyen thi G,06/06/1555,false,Hoá,9.0
+5,Nguyen thi D,06/06/1555,false,Tin,4.0
+3,Nguyen Tan G,06/06/1555,false,Anh,6.0

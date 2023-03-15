@@ -1,0 +1,8 @@
+1,Nguyen van A,11/05/2013,false,A7,6.0
+4,Nguyen van AB,12/02/2000,false,A7,8.0
+3,Nguyen van V,13/01/2001,false,A7,4.0
+1,Le,00000,false,ad,10.0
+123,phuong,06/06/1999,false,c,10.0
+1,phuong,9/99/1999,false,2,1.0
+1,phuong,661999,false,ád,10.0
+123,Sang,06/99/1999,false,a6,10.0
