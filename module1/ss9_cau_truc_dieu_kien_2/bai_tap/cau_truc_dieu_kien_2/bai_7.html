@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt('Giá trị a(a#0)'));
+    let b = parseInt(prompt('Giá trị b'));
+    let c = parseInt(prompt('Giá trị c'));
+    let x1;
+    let x2;
+    let delta = Math.pow(b, 2) - 4 * a * c;
+    if (a == 0) {
+        alert('Không phải phương trình bậc 2')
+    }
+    if (delta > 0) {
+        alert('Phương trình có 2 nghiệm:' + 'x1=' + (x1 = (-b + Math.sqrt(delta)) / (2 * a)) + '   x2=  ' + (x2 = (-b - Math.sqrt(delta)) / (2 * a)));
+    } else if (delta == 0) {
+        alert('Phương trình có nghiệm kép: x1=x2=' + (x1 = -b / (2 * a)));
+    } else {
+        alert('Phương trình vô nghiệm');
+    }
+    ;
+
+
+</script>
+</body>
+</html>

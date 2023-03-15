@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var array = ['code', 'gym', 'vb'];
+    console.log(array);
+    array.splice(2, 1);
+    console.log(array);
+    var students = [
+        {
+            id: 1,
+            name: 'le ta phuong',
+            address: "quang nam",
+        },
+        {
+            id: 2,
+            name: 'nguyen cong nguyen',
+            address: 'hoian',
+
+        }
+    ]
+    console.log(students);
+    for (let i = 0; i < students.length; i++) {
+        if (students[i].id==2) {
+            students.splice(i,1)
+        }
+    }console.log(students);
+
+
+    // let array=['code'];
+    // array.push('gym');
+    // console.log(array);
+    //
+    // let students=[];
+    // var student={
+    //     id:1,
+    //     name:'le ta ha phuong',
+    //     address:'quang nam',
+    // }
+    // students.push(student);
+    // console.log(students);
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1 = +prompt("Chiều dài mảng");
+    let arrayA = [];
+    for (let i = 0; i < num1; i++) {
+        arrayA[i] = +prompt("Nhập số phần tử: ");
+    }
+    let dem = 0;
+    let arrayB = [];
+    for (let j = 0; j < arrayA.length; j++) {
+        dem += arrayA[j];
+        arrayB[j] = dem;
+    }
+    alert(arrayB);
+
+
+    // let x= [ 'c', 's', 'c','3', '2', '6', '1' ];
+    // for (let i = 0; i <x.length/2 ; i++) {
+    //     let tam=x[i];
+    //     x[i]=x[x.length-1-i]
+    //     x[x.length-1-i]=tam
+    // }
+    // document.write(x.toString());
+</script>
+</body>
+</html>

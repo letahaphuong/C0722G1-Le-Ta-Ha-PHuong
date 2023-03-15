@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    class BongDen{
+        constructor() {
+            this.trangThai=false;
+        }
+        tat(){
+            this.trangThai=false;
+        }
+        bat(){
+            this.trangThai=true;
+        }
+
+    }
+    class CongTac{
+        constructor() {
+            this.trangThai=false;
+            this.den=null;
+        }
+        ketNoi(bongDen){
+            this.den=bongDen;
+        }
+        tatDen(){
+            this.trangThai=false;
+            this.den.tat();
+        }
+        batDen(){
+            this.trangThai=true;
+            this.den.bat();
+        }
+    }
+    let den1=new BongDen();
+    let congTac=new CongTac();
+    congTac.ketNoi(den1);
+    congTac.tatDen();
+    console.log("Trạng thái của công tắc"+congTac.trangThai);
+    console.log("Trạng thái của bóng đèn"+den1.trangThai);
+    congTac.batDen();
+    console.log("Trạng thái của công tắc"+congTac.trangThai);
+    console.log("Trạng thái của bóng đèn"+den1.trangThai);
+
+</script>
+</html>

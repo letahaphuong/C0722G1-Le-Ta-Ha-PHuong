@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1 = parseInt(prompt('Số lượng phần tử bạn muốn nhập trong mảng a'));
+    let a = [];
+    for (let i = 0; i < num1; i++) {
+        let num0 = parseInt(prompt('Nhập phần tử  '+i));
+        a.push(num0);
+    }
+    let num2 = parseInt(prompt('Số lương phần tử bạn muốn nhập trong mảng b'));
+    let b = [];
+    for (let j = 0; j < num2; j++) {
+        let num3 = parseInt(prompt('Nhập phần tử  '+j));
+        b.push(num3);
+    }
+    let c = [];
+    for (let z = 0; z < 1; z++) {
+        c.push(a, b);
+    }
+    document.write(c.toString());
+</script>
+</body>
+</html>

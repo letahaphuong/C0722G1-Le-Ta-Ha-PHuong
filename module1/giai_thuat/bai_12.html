@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul style="list-style-type: circle">
+    <li>1</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<ol >
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+</ol>
+<script>
+
+    // 12.	Viết chương trình thực hiện công việc sau:
+    //     a.	Nhập ma trận a (m dòng, n cột) gồm các phần tử kiểu int
+    // b.	Tính tích các số là bội số của 3 nằm trên dòng đầu tiên của ma trận a.
+    //     c.	Tạo ra mảng một chiều X[i] với X[i] là các giá trị lớn nhất trên dòng i của ma trận a
+    // d.	Xoá đi phần tử đầu tiên của mảng X[i], xuất lại mảng X[i].
+
+    // let m= +prompt('Số dòng trong mảng:');
+    // let n= +prompt('Số cột trong mảng:');
+    // let array=[];
+    // for (let i = 0; i < m; i++) {
+    //     array[i]=[];
+    //     for (let j = 0; j < n; j++) {
+    //     array[i][j]= +prompt("Nhập phần tử trong mảng: ")
+    //     }
+    // }
+
+
+    let array = [[1, 6, 3, 4], [5, 6, 7, 8, 9]];
+    let array1 = [];
+    for (let j = 0; j < array[0].length; j++) {
+        if (array[0][j] % 3 == 0) {
+            array1.push(array[0][j])
+        }
+    }
+
+    for (let i=0;i<array.length;i++){
+        for (let j = 0; j <array.length ; j++) {
+            let sum*=array[i][j]
+        }
+
+    }
+    alert(array1[1]*array1[0])
+    // alert(eval(array1.join('*')));
+</script>
+</body>
+</html>

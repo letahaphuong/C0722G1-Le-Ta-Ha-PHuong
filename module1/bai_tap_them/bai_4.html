@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="id" placeholder="Nhập mã máy mới: ">
+<input type="text" id="name" placeholder="Nhập tên mới: ">
+<input type="text" id="producer" placeholder="Nhập tên nhà sản xuất mới: ">
+<input type="text" id="price" placeholder="Nhập giá mới: ">
+<input type="button" onclick="addNewComputer()" value="Thêm Máy Mới!">
+<p id="display"></p>
+<script>
+    class Computer {
+        constructor(id, name, producer, price) {
+            this.id = id;
+            this.name = name;
+            this.producer = producer;
+            this.price = price;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setProducer(producer) {
+            this.producer = producer;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getProducer() {
+            return this.producer;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+    }
+
+    let computer1 = new Computer('ADDSA', 'DELL VOSTRO', 'DELL', 1000);
+    let computer2 = new Computer('KLLJ', 'HP 1222', 'HP', 1000);
+    let computer3 = new Computer('POIPOI', 'LEGION', 'LENOVO', 1000);
+    let computer4 = new Computer('MNASD', 'MACBOOK', 'APPLE', 1000);
+    let computerList = [computer1, computer2, computer3, computer4];
+    display(computerList);
+
+    function display(list) {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>MÃ MÁY</th>\n' +
+            '        <th>TÊN MÁY</th>\n' +
+            '        <th>HÃNG SX</th>\n' +
+            '        <th>GIÁ BÁN</th>\n' +
+            '        <th>DELETE</th>\n' +
+            '        <th>EDIT</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + list[i].getId() + '</td>\n' +
+                '        <td>' + list[i].getName() + '</td>\n' +
+                '        <td>' + list[i].getProducer() + '</td>\n' +
+                '        <td>' + list[i].getPrice() + '</td>\n' +
+                '        <td><input type="button" onclick="deleteComputerById(' + i + ')" value="Delete"></td>\n' +
+                '        <td><input type="button" onclick="editComputerById(' + i + ')" value="Edit"></td>\n' +
+                '    </tr>';
+        }
+
+        tableString += '</table>';
+        document.getElementById('display').innerHTML = tableString;
+    }
+
+    function deleteComputerById(index) {
+        let conf = confirm('Bạn có muốn xoá sản phẩm: ' + computerList[index].getName());
+        if (conf) {
+            computerList.splice(index, 1);
+        }
+        display(computerList);
+    }
+
+    function editComputerById(index) {
+        let editId = prompt('Nhập mã máy mới: ' + computerList[index].getId());
+        let editName = prompt('Nhập tên mới: ');
+        let editProducer = prompt('Nhập tên nhà sản xuất mới: ');
+        let editPrice = prompt('Nhập giá mới: ');
+        computerList[index].setId(editId);
+        computerList[index].setName(editName);
+        computerList[index].setProducer(editProducer);
+        computerList[index].setPrice(editPrice);
+        display(computerList);
+    }
+
+    function addNewComputer() {
+        let id = document.getElementById('id').value;
+        let name = document.getElementById('name').value;
+        let producer = document.getElementById('producer').value;
+        let price = document.getElementById('price').value;
+        let newComputer=new Computer(id,name,producer,price);
+        computerList.push(newComputer);
+        document.getElementById('id').value='';
+        document.getElementById('name').value='';
+        document.getElementById('producer').value='';
+        document.getElementById('price').value='';
+        display(computerList);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> Tính chỉ số cân nặng</h2>
+<table>
+    <tr>
+        <td>Nhập cân nặng:(kg)</td>
+        <td><input type="text" id="weight"></td>
+    </tr>
+    <tr>
+        <td>Nhập chiều cao:(m)</td>
+        <td><input type="text" id="height"></td>
+    </tr>
+</table>
+    <input type="submit" value="Kiểm tra" id="button" onclick="do_sth()">
+    <p id="ketQua"></p>
+</body>
+    <script>
+        function do_sth() {
+        let a = parseInt(document.getElementById("weight").value);
+        let b = parseInt(document.getElementById("height").value);
+        let bmi=a/(b^2);
+
+        if (bmi<18.5) {
+            document.getElementById("ketQua").innerText="Chỉ số BMI là:" + bmi + "Bạn thiếu cân! Ăn vào nhé!";
+        } else if(bmi>=18.5 && bmi<25.0){
+            document.getElementById("ketQua").innerText="Chỉ số BMI là:" + bmi + "Bình thường";
+        }else if(bmi>=25.0 && bmi <=30.0){
+            document.getElementById("ketQua").innerText="chỉ số BMI là:" + bmi + "Bặn thừa cân!Nên tập gym nhé !";
+        }else if (bmi>=30){ document.getElementById("ketQua").innerText="chỉ số BMI là:" + bmi + "Bạn bị béo phì";}
+
+        }
+    </script>
+
+
+</html>

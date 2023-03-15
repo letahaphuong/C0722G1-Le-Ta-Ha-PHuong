@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    tr td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 50px; height: 30px;
+        text-align: center;
+
+    }
+    p{
+        text-align: left;
+    }
+</style>
+<body>
+    <p2>Ứng Dụng Máy Tính</p2>
+    <form>
+    <table>
+        <tr>
+            <td colspan="4" ><input type="text" id="display" ></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="number_1()">1</button></td>
+            <td><button type="button" onclick="number_2()">2</button></td>
+            <td><button type="button" onclick="number_3()">3</button></td>
+            <td><button type="reset" onclick="reset()">RESET</button></td>
+
+        </tr>
+        <tr>
+            <td><button type="button" onclick="number_4()">4</button></td>
+            <td><button type="button" onclick="number_5()">5</button></td>
+            <td><button type="button" onclick="number_6()">6</button></td>
+            <td><button type="button" onclick="phepChia()">/</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="number_7()">7</button></td>
+            <td><button type="button" onclick="number_8()">8</button></td>
+            <td><button type="button" onclick="number_9()">9</button></td>
+            <td><button type="button" onclick="phepNhan()">*</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="number_0()">0</button></td>
+            <td><button type="button" onclick="bang()" >=</button></td>
+            <td><button type="button" onclick="phepCong()">+</button></td>
+            <td><button type="button" onclick="phepTru()">-</button></td>
+        </tr>
+    </table>
+    </form>
+</body>
+<script>
+
+        function number_1() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '1' ;
+
+        }
+        function number_2() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '2';
+
+        }
+        function number_3() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '3';
+
+        }
+        function number_4() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '4';
+
+        }
+        function number_5() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '5';
+
+        }
+        function number_6() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '6';
+
+        }
+        function number_7() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '7';
+
+        }r
+        function number_8() {r
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '8';
+
+        }
+        function number_9() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '9';
+
+        }
+        function number_0() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '0';
+
+        }
+        function phepCong() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '+';
+
+        }
+        function phepTru() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '-';
+
+        }
+        function phepNhan() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '*';
+
+        }
+        function phepChia() {
+            let str = document.getElementById("display").value;
+            document.getElementById("display").value =str + '/';
+
+        }
+        function bang() {
+            let str = document.getElementById("display").value;
+            let ketQua=eval(str);
+            document.getElementById("display").value=ketQua;
+        }
+
+
+
+
+</script>
+</html>

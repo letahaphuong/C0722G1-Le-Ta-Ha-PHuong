@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let number = isprime(+prompt('số caafn ktr'))
+
+    function isprime(number) {
+        // Biến nhớ
+        let count = true;
+        // Nếu number bé hơn 2 tức là không phải số nguyên tố
+        if (number < 2) {
+            count = false;
+
+        } else {
+            // lặp từ 2 tới number-1(nếu 1 sẽ sai)
+            for (let i = 2; i < number ; i++) {
+                if (number % i == 0) {
+                    count = false;
+                    break;
+                }
+            }
+        }
+        // Kiểm tra biến nhớ
+        if (count == true) {
+            document.write(number + " là số nguyên tố <br/>");
+        } else {
+            document.write(number + " không phải là số nguyên tố <br/>");
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let chieuDaiMang = +prompt('Nhập chiều dài mảng');
+    let mang = [];
+    for (let i = 0; i < chieuDaiMang; i++) {
+        mang[i] = prompt('Nhập phần tử trong mảng ' + i);
+    }
+    let kiTu = prompt('Nhập kí tự bất kì');
+    let bienNho = 0;
+
+    function kiemTraKiTu(a, b) {
+        for (let i = 0; i < mang.length; i++) {
+            if (mang[i] === kiTu) {
+                bienNho++;
+            }
+        }
+        if (bienNho > 0) {
+            return bienNho;
+        } else {
+            return -1;
+        }
+    }
+
+    alert(kiemTraKiTu(mang, kiTu));
+
+    // alert(kiemTraKiTu(mang, kiTuBatKi))
+</script>
+</body>
+</html>

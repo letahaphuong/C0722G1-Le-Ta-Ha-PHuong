@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table{
+
+        border-collapse: collapse;
+        width: 100%;
+    }
+    h1{
+        text-align: center;
+    }
+</style>
+<body>
+<h1>Danh Sách Bệnh Nhân</h1>
+<p id="hienThiManHinh"></p>
+<script>
+    class BenhNhan {
+        constructor(hoVaTen, tuoi, diaChi, soDienThoai) {
+            this.hoVaten = hoVaTen;
+            this.tuoi = tuoi;
+            this.diaChi = diaChi;
+            this.soDienThoai = soDienThoai;
+        }
+
+        setHoVaTen(hoVaTen) {
+            this.hoVaten = hoVaTen;
+        }
+
+        setTuoi(tuoi) {
+            this.tuoi = tuoi;
+        }
+
+        setDiaChi(diaChi) {
+            this.diaChi = diaChi;
+        }
+
+        setSoDienThoai(soDienThoai) {
+            this.soDienThoai = soDienThoai;
+        }
+
+        getHoVaTen() {
+            return this.hoVaten;
+        }
+
+        getTuoi() {
+            return this.tuoi;
+        }
+
+        getDiaChi() {
+            return this.diaChi;
+        }
+
+        getSoDienThoai() {
+            return this.soDienThoai;
+        }
+    }
+
+    let benhNhan1 = new BenhNhan('Nguyễn Lê Hoàng Oanh', 20, 'Quảng Nam', '0923434564');
+    let benhNhan2 = new BenhNhan('Nguyễn Trần Cảnh', 30, 'Quảng Nam', '0943246324');
+    let benhNhan3 = new BenhNhan('Hoàng Thanh Hùng', 15, 'Quảng Nam', '0123451235');
+    let benhNhan4 = new BenhNhan('Trần Lệ Quyên', 19, 'Quảng Nam', '0923093748');
+    let danhSachBenhNhan = [benhNhan1, benhNhan2, benhNhan3, benhNhan4];
+    hienThi(danhSachBenhNhan);
+
+    function hienThi(danhSach) {
+        let bangChuoi = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Họ và tên</th>\n' +
+            '        <th>Tuổi</th>\n' +
+            '        <th>Địa chỉ</th>\n' +
+            '        <th>Số Điện Thoại</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSach.length; i++) {
+            bangChuoi += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + danhSach[i].getHoVaTen(function (a,b) {
+                        return a-b;
+                }) + '</td>\n' +
+                '        <td>' + danhSach[i].getTuoi() + '</td>\n' +
+                '        <td>' + danhSach[i].getDiaChi() + '</td>\n' +
+                '        <td>' + danhSach[i].getSoDienThoai() + '</td>\n' +
+                '    </tr>';
+        }
+
+        bangChuoi += '</table>';
+        document.getElementById('hienThiManHinh').innerHTML = bangChuoi;
+
+    }
+
+
+</script>
+</body>
+</html>

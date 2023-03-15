@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function area() {
+        let result = banKinh * banKinh * Math.PI;
+        document.write(result + '<br>');
+
+    }
+
+    function chuVi() {
+        let tinhChuVi = banKinh * 2 * Math.PI;
+        document.write(tinhChuVi);
+    }
+
+    let banKinh = +prompt('Nhập bán kính hình tròn');
+
+    area(banKinh);
+    chuVi(banKinh);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = ['c', 's', 'c', '2', '6', '1'];
+    let firstIndex = 0;
+    let lastIndex = arr.length - 1;
+    for (let i = 0; i < (arr.length/2); i++) {
+        let b = arr[firstIndex];
+        arr[firstIndex] = arr[lastIndex];
+        arr[lastIndex] = b;
+        firstIndex++;
+        lastIndex--;
+    }document.write(arr.toString());
+</script>
+</body>
+</html>

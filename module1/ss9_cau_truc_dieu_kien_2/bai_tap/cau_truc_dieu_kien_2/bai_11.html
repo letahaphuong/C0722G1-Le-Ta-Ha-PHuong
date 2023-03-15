@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let pay = parseInt(prompt('Nhập tổng số lương của bạn'));
+    let thue;
+    if (pay<5000000){
+        alert(thue=pay*0.05 + '  Lá số tiền bạn phải đóng thuế!')
+    }else if (pay<=10000000){
+        alert(thue=pay*0.1 + '  là số tiền bạn phải đóng thuế!')
+    }else if (pay<=18000000){
+        alert(thue=pay*0.15 + '  là số tiền bạn phải đóng thuế!')
+    }else if (pay<32000000){
+        alert(thue=pay*0.2 + '  là số tiền bạn phải đóng thuế!')
+    }else{ alert(theu=pay*0.4 + '  là số tiền bạn phải đóng thuế!')}
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// <!-- chia hết cho 2   -->
+    // var value = prompt("Nhập giá trị:")
+    // if (value %2 == 0){
+    //     alert("số chẵn");
+    // }
+    // else { alert("số lẽ");}
+
+
+// Số nhập vào lớn hơn 5
+
+    // let x = prompt("Nhập số:");
+    // if (x > 5){
+    //     alert("lớn hơn 5")
+    // }
+    // else if(x<5){
+    //     alert("bé hơn 5")
+    // }
+    // else { alert("bằng 5")}
+
+// số dương chẳn lẽ
+
+    // let x = prompt("nhập số bất kì")
+    // if (x>0){
+    //     if (x %2 == 0){ alert(x +"Là số dương chẵn")}
+    //     else { alert(x + "Là số dương lẽ")}
+    // }
+    // else if (x<0){
+    //     if (x %2 ==0){ alert( x + "là số âm chẵn")}
+    //     else { alert(x + "là số âm lẽ")}
+    // }
+    // else {alert("vui lòng nhập số khác 0")}
+
+// cho ba số tìm số lớn thứ 2
+
+    // let x = parseInt(prompt("nhap a"));
+    // let y = parseInt(prompt("nhap b"));
+    // let z = parseInt(prompt("nhap c"));
+    // if (x>y && x>z){
+    //     if(y>z){alert(y + "là số lớn thứ 2");}
+    //     else {alert(z +"là số lớn thứ 2");}
+    // }
+    // else if(y>x && y>z){
+    //     if(x>z){alert(x + "là số lớn thứ 2");}
+    //     else {alert(z + "là số lớn thứ 2");}
+    // }
+    // else { if (x>y){
+    //     alert(x + "là số lớn thứ 2");}
+    //         else{alert(y +"là số lớn thứ 2");}
+    // }
+
+// cho bà số tìm số lớn thứ 2.nếu ko có số lớn thứ 2 thì trả về -1.nếu có 2 số lớn thứ 2 thì trả về số thứ 2
+
+    // let x = parseInt(prompt("nhap a"));
+// let y = parseInt(prompt("nhap b"));
+// let z = parseInt(prompt("nhap c"));
+// if (x == y){
+//     if(x==z){ alert(x=-1)}
+//     else { if(x<z){alert(x)}
+//             else {alert(z)}
+//         }
+// }
+// else if(x==z){
+//     if (x>y){alert(y)}
+//     else {alert(x)}
+//
+// }
+// else if(y==z){
+//     if (y>x){alert(x)}
+//     else {alert(y)}
+// }
+// else if (x>y){
+//     if (x<z){alert(x)}
+//     else {if(y>z){alert(y)}
+//             else{alert(z)}}
+// }
+// else if(y>x){
+//     if (y<z){alert(y)}
+//     else {alert(z)}
+// }
+// else {alert(x)}
+
+    // Switch - case
+
+    // var opera = "+";
+    // var a=6;
+    // var b=3;
+    // switch (opera) {
+    //     case "+": alert("a+b=" + (a+b));
+    //     break;
+    //     case "-": alert("a-b=" + (a-b));
+    //     break;
+    //     case "*": alert("a*b" +(a*b));
+    //     break;
+    //     case "/": alert("a/b" + (a/b));
+    //     break;
+    //     default:alert("không có phép toán");
+    //         break;
+    // }
+
+    // switch case lồng nhâu
+
+    // var a=100;
+    // var b=200;
+    // switch (a) {
+    //     case 100: alert("a=" + a);
+    //         switch (b) {case 200:alert(("b=" + b));
+    //
+    //         }
+    // }
+ function do_sth() {
+
+
+    var a = parseInt(document.getElementById("gia_tri_1").value);
+    var b = parseInt(document.getElementById("gia_tri_2").value);
+    var opera = document.getElementById("dau").value;
+    // let c=toString("Kết quả =");
+    switch (opera) {
+    case "+": alert("Kết quả="+(c=a+b));
+    break;
+    case "-":alert("Kết quả="+(a-=b));
+    break;
+    case "*":alert("Kết quả ="+(a*=b));
+    break;
+    case "/":alert("Kết quả bằng"+(a/=b));
+    break;
+    // default:alert("Xin nhập dấu");
+    // break;
+
+    }
+ }
+</script>
+<input type="number" id="gia_tri_1">
+<select id="dau">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+</select>
+<!--<input type="text" id="dau">-->
+<input type="number" id="gia_tri_2">
+<button type="button" onclick="do_sth()">=</button>
+</body>
+</html>

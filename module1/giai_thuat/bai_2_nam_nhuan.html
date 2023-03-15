@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let thang = +prompt('Nhập số tháng')
+    hienThi(thang)
+    let nam = +(prompt('Nhap So Nam:'));
+    if (nam % 4 == 0) {
+        if (nam % 100 == 0) {
+            if (nam % 400 == 0) {
+                alert(nam + 'La Nam Nhuan' + hienThi1(thang));
+            } else {
+                alert(nam + 'Khong Phai La Nam Nhuan' + hienThi(thang));
+            }
+        } else {
+            alert(nam + 'La Nam Nhuan' + hienThi1(thang));
+        }
+    } else {
+        alert(nam + 'Khong Phai La Nam Nhuan' + hienThi(thang));
+    }
+
+    function hienThi(so) {
+        let text = ''
+        switch (so) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 9:
+            case 11:
+                text = so + ' :Là tháng có 30 ngày';
+                break;
+            case 4:
+            case 6:
+            case 8:
+            case 10:
+            case 12:
+                text = so + ' :là tháng có 30 ngày';
+                break;
+            case 2:
+                text = so + ' :là tháng có 29 ngày';
+                break;
+        }
+        return text;
+    }
+
+    hienThi1(thang);
+
+    function hienThi1(so1) {
+        let text = '';
+        switch (so1) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 9:
+            case 11:
+                text = so1 + ' :Là tháng có 30 ngày';
+                break;
+            case 4:
+            case 6:
+            case 8:
+            case 10:
+            case 12:
+                text = so1 + ' :là tháng có 30 ngày';
+                break;
+            case 2:
+                text = so1 + ' :là tháng có 28 ngày';
+                break;
+        }
+        return text;
+    }
+
+
+</script>
+</body>
+</html>

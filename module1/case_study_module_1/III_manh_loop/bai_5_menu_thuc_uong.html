@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    let chonMon;
+    let soLuong;
+    let tinhTien=0;
+    do {
+        chonMon = +prompt("Hãy Chọn Món" + "\n"
+            + '1.Cafe\n' +
+            '2.Cam Vắt\n' +
+            '3.Nước Ép Cà Rốt\n' +
+            '4.Nước Ép Cà Chua\n' +
+            '5.Nước Lọc\n' +
+            '6.Nước Dừa\n' +
+            '7.Hoàn Thành Gọi Món!');
+        let mangDanhSach=[1,2,3,4,5,6];
+        let mon=['Cafe','Cam Vắt','Nước ép cà rốt','Nước ép cà chua','Nước lọc','Nước dừa'];
+        let donGia=[10000,20000,25000,25000,8000,15000];
+        for (let i=0;i<mangDanhSach.length;i++){
+            if (chonMon===mangDanhSach[i]){
+                soLuong= +prompt(mon[i]+'  có giá:'+donGia[i]+'\n'+'Số lượng bạn cần mua là bao nhiêu:')
+                tinhTien+=donGia[i]*soLuong;
+            }
+        }
+    }while(chonMon!==7)
+    alert('Số tiền bạn phải trả là: '+tinhTien)
+</script>
+</body>
+</html>

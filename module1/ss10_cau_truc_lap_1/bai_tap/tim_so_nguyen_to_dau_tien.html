@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let num = prompt('nhập số lượng số nguyên tố cần in ra:');
+    let numCheck = 2;
+    let loop = 0;
+    let text = '';
+    number=0;
+    while (count < 20) {//nhập điều kiện biến đếm bắt đầu từ 0 và biến đếm nhỏ hơn số lượng số nguyên tố nhập vào.
+        loop=0;
+        for (let i = 2; i <= Math.sqrt(numCheck); i++) {
+            if (numCheck % i === 0) {
+                loop++;
+            }
+        }
+        if (loop === 0) {
+            text += numCheck + '<br>';
+            count++;
+        }
+        numCheck++;
+    }
+    document.write(text);
+
+    // let n =+prompt('Nhập vào số nguyên tố cần hiển thị:');
+    // let demLuongSNT =0;
+    // while (demLuongSNT<n) {
+    //     // tìm ra số nguyên tố.
+    //     let count = 0;
+    //     for (let i = 1; i <= n; i++) {
+    //         if (n % i === 0) {
+    //             count++;
+    //         }
+    //     }
+    //     if (count === 2) {
+    //
+    //         demLuongSNT++;
+    //     }
+    //     n++;
+    // }document.write(n + ", ");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 8.	Nhập 2 số nguyên dương a và b. Sau đó in ra ước
+    // chung lớn nhất và bội chung nhỏ nhất của 2 số nguyên dương a và b đó.
+
+
+    let a = +prompt("Nhap gia tri a:");
+    let b = +prompt("Nhap gia tri b:");
+    UCLN(a, b);
+
+    function UCLN(x, y) {
+        while (x !== y) {
+            if (x>y) {
+                x=x-y;
+            } else {
+                y=y-x;
+            }return x;
+        }
+    }
+    document.write("Ước chung lớn nhất : " + UCLN(a,b)+'<br>');
+    document.write("UBội chung nhỏ  nhat: " + a*b/UCLN(a,b));
+
+
+  </script>
+</body>
+</html>

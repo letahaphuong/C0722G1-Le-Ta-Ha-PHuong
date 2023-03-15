@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=0;
+    let b=a+1;
+    let c;
+    let number=prompt('nhập số lượng số finabocci muốn hiển thị:');
+    let text=a + '<br>' + b +'<br>';
+    for (let i=3;i<=number;i++){
+        c=b+a;
+        a=b;
+        b=c;
+        text+= c + '<br>';
+    }document.write(text);
+
+</script>
+</body>
+</html>

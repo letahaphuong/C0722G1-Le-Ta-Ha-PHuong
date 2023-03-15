@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><span id="display" ></span></p>
+<script>
+    let myDate = function (day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.getday = function () {
+            return this.day;
+        }
+        this.getmonth = function () {
+            return this.month;
+        }
+        this.getyear = function () {
+            return this.year;
+        }
+        this.setday = function (day) {
+            this.day = day;
+        }
+        this.setmonth = function (month) {
+            this.month = month;
+        }
+        this.setyear = function (year) {
+            this.year = year;
+        }
+    };
+    let date=new myDate(6,6,1995);
+
+    date.setday(+prompt('Set Day:'));
+    date.setmonth(+prompt('set month:'));
+    date.setyear(+prompt('Set year:'));
+
+    let day = date.getday();
+    let month=date.getmonth();
+    let year=date.getyear();
+    document.getElementById('display').innerHTML=(day+'/'+month+'/'+year)
+
+
+</script>
+</body>
+</html>

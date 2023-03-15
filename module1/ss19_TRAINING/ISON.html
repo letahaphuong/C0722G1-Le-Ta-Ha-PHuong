@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<SCRIPT>
+    function turnOn(machine) {
+        machine.isOn = true;
+    }
+    let computer = {
+        isOn: false
+    };
+    turnOn(computer);
+    console.log(computer.isOn); // true;
+</SCRIPT>
+</body>
+</html>

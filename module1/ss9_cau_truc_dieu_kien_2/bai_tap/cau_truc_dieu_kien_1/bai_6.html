@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính hoa hồng</title>
+</head>
+<body>
+
+    ví dụ trên 1000 thì 7%
+    ban được 500-->1000 sản phẩm thì được 5%
+                    500====> 2
+
+</body>
+<script>
+    let soSanPham = parseInt(prompt("Nhập số sản phẩm bán ra:"));
+    let doanhThu;
+    if(soSanPham>=1000){
+        alert(doanhThu=soSanPham*0.07 + "là tiền hoa hồng bạn được nhận!")
+    }else if(soSanPham>=500){
+        alert(doanhThu=soSanPham*0.05+ "là tiền hoa hồng bạn được nhận!")
+    }else if(soSanPham<500){
+        alert(doanhThu=soSanPham*0.02+ "là tiền hoa hồng bạn được nhận! ")
+    }
+    else {alert('không hợp lệ!')}
+</script>
+</html>

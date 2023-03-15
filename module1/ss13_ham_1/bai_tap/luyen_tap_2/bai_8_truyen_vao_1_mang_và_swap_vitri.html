@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (let i = 0; i < 6; i++) {
+        array[i] = parseInt(prompt("Nhập phần tử trong mảng"+i));
+    }
+    function swap(array) {
+        for (let j=0;j<3;j++){
+            let count=array[j];
+            array[j]=array[array.length-1-j];
+            array[array.length-1-j]=count;
+        }return array;
+    }alert(swap(array))
+</script>
+</body>
+</html>

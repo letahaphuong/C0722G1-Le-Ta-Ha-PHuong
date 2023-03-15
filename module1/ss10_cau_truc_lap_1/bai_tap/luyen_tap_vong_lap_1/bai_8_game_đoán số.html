@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="submit" onclick="letPlay()">Chơi!</button>
+</body>
+<script>
+
+    function letPlay() {
+        let inputMax = parseInt(prompt('Nhập số bé nhất trong khoảng bạn muốn đoán:'));
+        let inputMin = parseInt(prompt('Nhập số lớn nhất trong khoảng bạn muốn đoán:'));
+        let input;
+        let ranDom = Math.floor(Math.random() * (inputMax - inputMin + 1)) + inputMin;
+        let n = 0;
+        let tam = 0;
+        // input = parseInt(prompt('Nhập số bạn muốn đoán:'));
+        //     if (input === ranDom) {
+        //         alert('bạn đã đáon trúng');
+        //     } else {
+        //         for (let i = 0; i <= 2; i++) {
+        //
+        //             if (input > ranDom) {
+        //                 alert('số bạn đoán bé hơn');
+        //             } else {
+        //                 alert('số bạn đoán đúng lớn hơn');
+        //             }
+        //             input = parseInt(prompt('Nhập số bạn muốn đoán:'));
+        //         }
+        //     }
+        //     alert('số lần đoán của bạn đã hết');
+        //
+        //
+        // }
+
+        // <!--Cách do while--> tại sao khi Đúng ko thoát vòng lặp được
+        // input = parseInt(prompt('Nhập số bạn muốn đoán:'));
+
+
+        do {
+            input = parseInt(prompt('Nhập số bạn muốn đoán (Bạn chỉ nhập được 3 lần):'));
+            tam = 0;
+            if (input === ranDom) {
+                alert("Chúc mừng đã đoán trúng");
+                ;
+                tam++;
+            } else if (input < ranDom) {
+                alert('Số bạn cần đoán lớn hơn.');
+            } else {
+                alert('Số bạn cần đoán bé hơn');
+            }
+            n++;
+            if (tam === 1) {
+                break;
+            }
+        } while (n < 3) ;
+        alert('Trò chơi kết thúc');
+    }
+
+
+
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+    let c;
+    for (let i = 0; i <= 20; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+        // text = c;
+        if (c%5==0){
+            alert(c);
+            break;
+        }
+    }
+    // for (c = 1; c <= 20; c++) {
+    //     if (c % 5 == 0) {
+    //         document.write(c);
+    //         break;
+    //     }
+    // }
+
+</script>
+</body>
+</html>

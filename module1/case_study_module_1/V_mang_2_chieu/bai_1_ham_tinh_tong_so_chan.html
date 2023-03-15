@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.
+
+
+    let chieuDaiMangA = +prompt('Nhập chiều dài mảng ngoài cùng:');
+    let chieuDaiMangB = +prompt('Nhập chiều dài mảng trong:');
+    let mang = [];
+    for (let i = 0; i < chieuDaiMangA; i++) {
+        mang[i] = [];
+        for (let j = 0; j < chieuDaiMangB; j++) {
+            mang[i][j] = +prompt('Nhập phần tử trong mảng');
+        }
+    }
+    document.write(mang.toString());
+    alert(tinhTong(mang));
+
+    function tinhTong(mang) {
+        let mang1 = []
+        for (let i = 0; i < chieuDaiMangA; i++) {
+            for (let j = 0; j < chieuDaiMangB; j++) {
+                if (mang[i][j] % 2 == 0) {
+                    mang1.push(mang[i][j]);
+                }
+            }
+        }
+        return (eval(mang1.join('+')));
+    }
+
+
+</script>
+</body>
+</html>

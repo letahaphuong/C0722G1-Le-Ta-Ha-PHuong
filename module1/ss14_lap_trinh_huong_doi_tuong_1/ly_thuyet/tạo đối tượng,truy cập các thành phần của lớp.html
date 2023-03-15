@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script !src="">
+
+    ///Tạo lớp với thuộc tính và phương thức.
+    // function student(id, name, address) {
+    //     this.id = id;
+    //     this.name = name;
+    //     this.address = address;
+    //     this.getInFor = function () {
+    //         return 'Id=' + this.id+'<br>' + 'Name=' + this.name+'<br>' + 'Address=' + this.address;
+    //     }
+    // }
+    //
+    // var student = new student(1, 'Nguyễn Văn A', 'Ha Noi');
+    // document.write(student.getInFor())
+    /////
+    var student={
+        id:1,
+        name:'Nguyen Van A',
+        address:'ha noi',
+        getInFor:function () {
+            return 'Id='+this.id+'Name='+this.name+'Address='+this.address
+        }
+    }
+    document.write(student.getInFor())
+
+</script>
+</body>
+</html>

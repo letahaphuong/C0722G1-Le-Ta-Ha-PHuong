@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let number=parseInt(prompt('Nhập số phần tử của mảng:'));
+        let arr=[]
+        for (let i=0;i<number;i++){
+            let num=prompt('Nhập các phần tử trong mảng:');
+            arr.push(num);
+        }
+        for (let j=0;j<arr.length;j++){
+            if (arr[j]==='-'){
+                arr[j] = '_';
+            }
+        }alert(arr)
+    </script>
+</body>
+</html>

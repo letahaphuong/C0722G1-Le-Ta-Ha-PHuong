@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--9.	Nhập vào một chuỗi ký tự  thực hiện công việc sau:-->
+<!--a.	In ra chuỗi đảo ngược của chuỗi đã cho-->
+<!--b.	Đổi chuổi đã cho sang chữ hoa-->
+<!--c.	Đổi chuỗi đã cho sang chữ thường-->
+<!--d.	Đổi chuỗi đã cho sang vừa chữ hoa vừa chữ thường (các ký tự chữ hoa thì thành chữ thường và ngược lại)-->
+
+<script>
+    let str = prompt('Nhập chuỗi kí tự bất kỳ: ');
+    // let newStr = str.split('');
+    document.write(checkStr(str));
+
+    function checkStr(string) {
+        string = string.split('');
+        for (let i = 0; i <= string.length-1; i++) {
+            if (string[i] === string[i].toUpperCase()) {
+                string[i] = string[i].toLowerCase();
+            } else{
+                string[i] = string[i].toUpperCase();
+            }
+        }
+        return string.join('');
+    }
+
+    // alert(array1)
+    // alert(newStr.reverse());
+    //
+    // alert(newStr = str.toUpperCase());
+    //
+    // alert(newStr = str.toLowerCase());
+
+
+</script>
+</body>
+</html>

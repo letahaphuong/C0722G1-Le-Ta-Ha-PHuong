@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="id" placeholder="id">
+<input type="text" id="name" placeholder="name">
+<input type="text" id="age" placeholder="age">
+<input type="text" id="gender" placeholder="gender">
+<input type="button" onclick="addNewStaff()" value="Add new staff">
+<p id="display"></p>
+</body>
+
+<script>
+    class Staff {
+        constructor(id, name, age, gender) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setAge(age) {
+            this.age = age;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getAge() {
+            return this.age
+        }
+
+        getGender() {
+            return this.gender;
+        }
+    }
+
+    let staff1 = new Staff(1, 'Văn A', 25, 'Nam');
+    let staff2 = new Staff(2, 'Văn B', 26, 'Nữ');
+    let staff3 = new Staff(3, 'Văn C', 27, 'Nam');
+    let staff4 = new Staff(4, 'Văn D', 28, 'Nữ');
+    let staffList = [staff1, staff2, staff3, staff4];
+    display(staffList);
+
+    // hiển thị danh sách
+    function display(list) {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>ID</th>\n' +
+            '        <th>Name</th>\n' +
+            '        <th>Age</th>\n' +
+            '        <th>Gender</th>\n' +
+            '        <th>Delete</th>\n' +
+            '        <th>Edit</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + list[i].getId() + '</td>\n' +
+                '        <td>' + list[i].getName() + '</td>\n' +
+                '        <td>' + list[i].getAge() + '</td>\n' +
+                '        <td>' + list[i].getGender() + '</td>\n' +
+                '        <td><input type="button" onclick="deleteStaffById(' + i + ')" value="Delete"></td>\n' +
+                '        <td><input type="button" onclick="editStaffById(' + i + ')" value="Edit"></td>\n' +
+                '    </tr>';
+        }
+
+        tableString += '</table>';
+        document.getElementById("display").innerHTML = tableString;
+    }
+    function deleteStaffById(index) {
+        let conf = confirm("Bạn có muốn xoá Nhân Viên tên: " + staffList[index].getName());
+        if (conf) {
+            staffList.splice(index, 1);
+        }
+        display(staffList)
+    }
+    function editStaffById(index) {
+        let editId = prompt("Nhập Id mới: " + staffList[index].getId());
+        let editName = prompt("Nhập tên mới: ");
+        let editAge = prompt("Nhập tuổi mới: ");
+        let editGender = prompt("Nhập giới tính: ");
+        staffList[index].setId(editId);
+        staffList[index].setName(editName);
+        staffList[index].setAge(editAge);
+        staffList[index].setGender(editGender);
+        display(staffList);
+    }
+
+
+
+    function addNewStaff() {
+        let id = document.getElementById('id').value;
+        let name = document.getElementById('name').value;
+        let age = document.getElementById('age').value;
+        let gender = document.getElementById('gender').value;
+        let newStaff = new Staff(id, name, age, gender);
+        staffList.push(newStaff);
+        display(staffList);
+        document.getElementById('id').value = '';
+        document.getElementById('name').value = '';
+        document.getElementById('age').value = '';
+        document.getElementById('gender').value = '';
+    }
+</script>
+</html>

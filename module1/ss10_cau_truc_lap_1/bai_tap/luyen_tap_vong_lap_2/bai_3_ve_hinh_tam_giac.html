@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt('Nhập số:')
+    let text = '';
+    let j;
+
+    for (let i=1;i<=number;i++){
+        for (let j=1;j<=i;j++){
+            text+='*';
+        }text+='<br>';
+    }document.write(text);
+
+
+    // for (let i = 1; i <= number; i++) {
+    //     for (let j = 1; j <= i; j--) {
+    //         text += '*';
+    //     }
+    //     text += '<br>';
+    // }
+    // document.write(text);
+
+
+    // for (let i = 1; i <= number; i++) {
+    //     for (j = 1; j <= number-i; j++) {
+    //         text += "&nbsp&nbsp";
+    //     }
+    //     for (let z = 1; z <= i; z++) {
+    //         text += "*";
+    //     }
+    //     text += "<br>";
+    // }
+    // document.write(text);
+
+
+    // for (let i = 0; i < number; i++) {
+    //     for (j = 1; j <= i; j++) {
+    //         text += "&nbsp&nbsp";
+    //     }
+    //     for (let z = 1; z <= number - i; z++) {
+    //         text += "*";
+    //     }
+    //     text += "<br>";
+    // }
+    // document.write(text);
+
+
+</script>
+</body>
+</html>

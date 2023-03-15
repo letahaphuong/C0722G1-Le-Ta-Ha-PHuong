@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 11.	Viết chương trình thực hiện các công việc như sau :
+    //     a.	Nhập một mảng a gồm n phần tử kiểu nguyên int
+    // b.	Tính tổng số dương lẻ mảng a
+    // c.	Tính tổng các số nguyên tố ở vị trí chắn.
+    //
+    //     d.	Nhập phần tử k, tìm xem k có xuất hiện trong mảng a không. Nếu có chỉ ra phần tử ở vị trí đầu tiên
+    //  e.	Sắp sếp mảng a theo thứ tự tăng dần..
+    //     e.	Chèn phần tử p vào mảng a sao cho mảng a vẫn đảm bảo tăng dần và xuất lại mảng a.
+
+    let number = +prompt('Nhập chiều dài mảng: ');
+    let inputNumber = +prompt('Nhập phần tử k:');
+    let chenb= +prompt('Chèn phần tử b:')
+    let array = [];
+    for (let i = 0; i < number; i++) {
+        array[i] = +prompt('Nhập phần tử trong mảng: ');
+    }
+    for (let i = 0; i < array.length; i++) {
+        if (inputNumber === array[i]) {
+            array.unshift(array[i])
+            array.splice(i+1, 1)
+        }
+    }
+    array.push(chenb);
+    alert(array.sort((a,b)=>(a-b)))
+
+
+    let array1 = [];
+    let array2 = [];
+    let array3 = [];
+    for (let i = 0; i <= array.length - 1; i++) {
+        if (array[i] % 2 !== 0) {
+            array1.push(array[i])
+        }
+        if (i % 2 === 0) {
+            array2.push(array[i]);
+        }
+    }
+
+    for (let i = 0; i < array2.length; i++) {
+        if (kiemTra(array2[i]) == true) {
+            array3.push(array2[i]);
+        }
+    }
+    alert(eval(array3.join('+')));
+
+    function kiemTra(number) {
+        let kiemTra = false;
+        let dem = 0;
+        if (number == 0 || number == 1) {
+            return false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    dem++;
+                }
+            }
+            if (dem == 0) {
+                kiemTra = true;
+            }
+            if (kiemTra) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let soLuong = parseInt(prompt('Số lượng số nguyên tố V'));
+    for (let i = 0; i < soLuong; i++) {
+        let num = parseInt(prompt('Nhập các phần tử trong mảng'));
+        arr.push(num);
+    }
+    let dem;
+    let numCheck = parseInt(prompt('Nhập số V cần kiểm tra'));
+    for (let j = 0; j < arr.length; j++) {
+        if (numCheck === arr[j]) {
+            dem=j;
+        }
+        for (let b=dem;b<arr.length;b++){
+            arr[j]=arr[j+1];
+        }
+    }arr[arr.length-1]=0;
+    alert(arr.toString());
+
+</script>
+</body>
+</html>

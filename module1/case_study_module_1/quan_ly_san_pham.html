@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="maHang" placeholder="Nhập Mã Hàng">
+<input type="text" id="ten" placeholder="Nhập Tên">
+<input type="text" id="donViTinh" placeholder="Nhập Đơn Vị Tính">
+<input type="text" id="giaVon" placeholder="Nhập Giá Vốn">
+<input type="text" id="giaBanLe" placeholder="Nhập Giá Bán Lẽ">
+<input type="text" id="giaDaiLy" placeholder="Nhập Giá Đại Lý">
+<input type="text" id="soLuong" placeholder="Nhập Số Lượng">
+<input type="button" onclick="themSanPham()" value="Thêm Sản Phẩm!">
+<p id="manHinh"></p>
+<script>
+    class SanPham {
+        constructor(maHang, ten, donViTinh, giaVon, giaBanLe, giaDaiLy, soLuong) {
+            this.maHang = maHang;
+            this.ten = ten;
+            this.donViTinh = donViTinh;
+            this.giaVon = giaVon;
+            this.giaBanLe = giaBanLe;
+            this.giaDaiLy = giaDaiLy;
+            this.soLuong = soLuong;
+        }
+
+        setMaHang(maHang) {
+            this.maHang = maHang;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        setDonViTinh(donViTinh) {
+            this.donViTinh = donViTinh;
+        }
+
+        setGiaVon(giaVon) {
+            this.giaVon = giaVon;
+        }
+
+        setGiaBanLe(giaBanLe) {
+            this.giaBanLe = giaBanLe;
+        }
+
+        setGiaDaiLy(giaDaiLy) {
+            this.giaDaiLy = giaDaiLy;
+        }
+
+        setSoLuong(soLuong) {
+            this.soLuong = soLuong;
+        }
+
+        getMaHang() {
+            return this.maHang;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        getDonViTinh() {
+            return this.donViTinh;
+        }
+
+        getGiaVon() {
+            return this.giaVon;
+        }
+
+        getGiaBanLe() {
+            return this.giaBanLe;
+        }
+
+        getGiaDaiLy() {
+            return this.giaDaiLy;
+        }
+
+        getSoLuong() {
+            return this.soLuong;
+        }
+    }
+
+    let sanpham1 = new SanPham(11, 'Iphone', 'Cái', 20000000, 30000000, 350000000, 100);
+    let sanpham2 = new SanPham(22, 'SamSung', 'Cái', 15000000, 24000000, 260000000, 1000);
+    let sanpham3 = new SanPham(33, 'RedMi', 'Cái', 5000000, 8000000, 10000000, 500);
+    let sanpham4 = new SanPham(44, 'Vinfast', 'Cái', 2000000, 4000000, 60000000, 999);
+    let danhSachSanPham = [sanpham1, sanpham2, sanpham3, sanpham4];
+    hienThi(danhSachSanPham);
+
+    function hienThi(danhSach) {
+        let bangChuoi = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>MÃ HÀNG</th>\n' +
+            '        <th>TÊN SẢN PHẨM</th>\n' +
+            '        <th>ĐV TÍNH</th>\n' +
+            '        <th>GIÁ VỐN</th>\n' +
+            '        <th>GIÁ BÁN LẼ</th>\n' +
+            '        <th>GIÁ ĐẠI LÝ</th>\n' +
+            '        <th>SL TỒN</th>\n' +
+            '        <th>Delete</th>\n' +
+            '        <th>Edit</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSach.length; i++) {
+            bangChuoi += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + danhSach[i].getMaHang() + '</td>\n' +
+                '        <td>' + danhSach[i].getTen() + '</td>\n' +
+                '        <td>' + danhSach[i].getDonViTinh() + '</td>\n' +
+                '        <td>' + danhSach[i].getGiaVon() + '</td>\n' +
+                '        <td>' + danhSach[i].getGiaBanLe() + '</td>\n' +
+                '        <td>' + danhSach[i].getGiaDaiLy() + '</td>\n' +
+                '        <td>' + danhSach[i].getSoLuong() + '</td>\n' +
+                '        <td><input type="button" onclick="xoaSanPhamVoiId(' + i + ')" value="Delete"></td>\n' +
+                '        <td><input type="button" onclick="suaSanPhamVoiId(' + i + ')" value="Edit"></td>\n' +
+                '    </tr>';
+        }
+        bangChuoi += '</table>';
+        document.getElementById('manHinh').innerHTML = bangChuoi;
+    }
+
+    function xoaSanPhamVoiId(index) {
+        let xacNhan = confirm('Bạn có muốn xoá: ' + danhSachSanPham[index].getTen());
+        if (xacNhan) {
+            danhSachSanPham.splice(index, 1);
+        }
+        hienThi(danhSachSanPham);
+    }
+    function suaSanPhamVoiId(index) {
+        let suaMaHang=prompt('Nhập mã hàng mới: '+danhSachSanPham[index].getMaHang());
+        let suaTen=prompt('Nhập tên mới của Sản Phẩm: ');
+        let suaDonViTinh=prompt('Nhập đơn vị tính mới: ');
+        let suaGiaVon=prompt('Nhập giá vốn mới: ');
+        let suaGiaBanLe=prompt('Nhập giá bán lẽ mới: ');
+        let suaGiaDaiLy=prompt('Nhập giá đại lý mới: ');
+        let suaSoLuong=prompt('Nhập số lượng mới: ');
+        danhSachSanPham[index].setMaHang(suaMaHang);
+        danhSachSanPham[index].setTen(suaTen);
+        danhSachSanPham[index].setDonViTinh(suaDonViTinh);
+        danhSachSanPham[index].setGiaVon(suaGiaVon);
+        danhSachSanPham[index].setGiaBanLe(suaGiaBanLe);
+        danhSachSanPham[index].setGiaDaiLy(suaGiaDaiLy);
+        danhSachSanPham[index].setSoLuong(suaSoLuong);
+        hienThi(danhSachSanPham);
+    }
+    function themSanPham() {
+        let maHang=document.getElementById('maHang').value;
+        let ten=document.getElementById('maHang').value;
+        let donViTinh=document.getElementById('maHang').value;
+        let giaVon=document.getElementById('maHang').value;
+        let giaBanLe=document.getElementById('maHang').value;
+        let giaDaiLy=document.getElementById('maHang').value;
+        let soLuong=document.getElementById('maHang').value;
+        let sanPhamMoi=new SanPham(maHang,ten,donViTinh,giaVon,giaBanLe,giaDaiLy,soLuong);
+        danhSachSanPham.push(sanPhamMoi);
+        hienThi(danhSachSanPham);
+        document.getElementById('maHang').value='';
+        document.getElementById('ten').value='';
+        document.getElementById('donViTinh').value='';
+        document.getElementById('giaVon').value='';
+        document.getElementById('giaBanLe').value='';
+        document.getElementById('giaDaiLy').value='';
+    }
+</script>
+</body>
+</html>

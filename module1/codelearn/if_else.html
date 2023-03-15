@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    run(9,2,4,1);
+    function run(a, b, c, d){
+        var sorted_str = "";
+
+        var a;
+        var b;
+        var c;
+        var d;
+        var trungGian;
+        var maxValue=a>b ? a:b;
+        maxValue=maxValue>c?maxValue:c;
+        maxValue=maxValue>d?maxValue:d;
+
+        var minValue=a<b ? a:b;
+        minValue=minValue<c ? minValue:c;
+        minValue=minValue<d ? minValue:d;
+
+        var result=a+b+c+d;
+        if (maxValue!=a && minValue!=a){
+            trungGian=a;
+        }else if (maxValue!=b&&minValue!=b){
+            trungGian=b;
+        }else if (maxValue!=c&&minValue!=c){
+            trungGian=c;
+        }else if (maxValue!=d&&minValue!=d){
+            trungGian=d;
+        }
+        var soConLai=result-maxValue-minValue-trungGian;
+
+        if (soConLai<=trungGian){
+            console.log(maxValue+','+trungGian+','+soConLai+','+minValue);
+        }else {
+            console.log(maxValue+','+soConLai+','+trungGian+','+minValue);
+        }
+
+
+
+
+
+        // console.log(sorted_str);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img id="img" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg" style = "width: 60px">
+    <p>Click button below to move the image to right</p>
+    <button type="button" onclick="moveright()">Click me!</button>
+</body>
+    <script>
+        let qua_bong=null;
+        qua_bong=document.getElementById("img");
+        function abc() {
+            qua_bong=document.getElementById("img");
+            qua_bong.style.position='relative';
+            qua_bong.style.left='0px';
+        }
+        function moveright() {
+        qua_bong.style.left=parseInt(qua_bong.style.left) + 10 + 'px';
+        }
+        window.onload = abc;
+    </script>
+</html>

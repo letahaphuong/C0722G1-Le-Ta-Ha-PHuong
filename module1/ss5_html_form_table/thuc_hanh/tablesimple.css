@@ -1,0 +1,12 @@
+table {
+    font-family: Arial,sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+th,td{
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even){
+    background: aqua;
+}

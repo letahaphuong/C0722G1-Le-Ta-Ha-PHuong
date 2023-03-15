@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thống kiểm tra đăng nhập của người dùng</title>
+</head>
+<body>
+<script>
+    let user = prompt("Nhập tên đăng nhập:")
+    if (user=="admin"){
+        let pass = prompt("password");
+        if (pass== "themaster"){ alert("Chào sếp!")}
+        else if (pass=='null'){alert("canceled!")}
+        else {alert("wrong password")}
+    }
+    else if (user=='null'){
+        alert("cancel!")
+    }
+    else {alert("mày là ai?")}
+
+
+        // let userName = prompt("Who's there?", '');
+        // if (userName == 'Admin') {
+        //     let pass = prompt('Password?', '');
+        //     if (pass == 'TheMaster') {
+        //         alert('Welcome!');
+        //     } else if (pass == null) {
+        //         alert('Canceled.');
+        //     } else {
+        //         alert('Wrong password');
+        //     }
+        // } else if (userName == null) {
+        //     alert('Canceled');
+        // } else {
+        //     alert("I don't know you");
+        // }
+
+
+
+</script>
+</body>
+</html>

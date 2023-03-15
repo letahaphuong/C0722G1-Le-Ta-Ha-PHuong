@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class QuaTao {
+        constructor() {
+            this.canNangQuaTao = 11;
+        }
+
+        trongLuongQuaTao() {
+            return this.canNangQuaTao;
+        }
+    }
+
+    class ConNguoi {
+        constructor(ten, gioiTinh, canNang) {
+            this.ten = ten;
+            this.gioiTinh = gioiTinh;
+            this.canNang = canNang;
+        }
+
+        noiChuyen(noi) {
+            console.log(noi);
+        }
+
+        anTao(anTao) {
+            if (anTao.canNangQuaTao > 0) {
+                this.canNang++;
+                anTao.canNangQuaTao--;
+            } else {
+                console.log("het tao de an!")
+            }
+        }
+
+        trongLuongConNguoi() {
+            return this.canNang;
+        }
+    }
+
+    let quaTao = new QuaTao();
+    let adam = new ConNguoi("Adam", "Nam", 70);
+    let eva = new ConNguoi("Eva", "nu", 45);
+    let i = 0;
+    while (0 < quaTao.canNangQuaTao) {
+        adam.noiChuyen("tao muon an tao");
+        adam.anTao(quaTao);
+        console.log("trong luong qua tao:" + quaTao.trongLuongQuaTao());
+        console.log("trong luong adam:" + adam.trongLuongConNguoi());
+        eva.noiChuyen("toi muon an tao");
+        eva.anTao(quaTao);
+        console.log("trong luong qua tao" + quaTao.trongLuongQuaTao());
+        console.log("Trong luong eva:" + eva.trongLuongConNguoi());
+        i++;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //     Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
+    //         Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount
+    //     (s1, s2) = 3.
+    // ⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.
+
+    let chuoiS1 = 'aabbcc';
+    let chuoiS2 = 'adcaac';
+    let mangS3 = [];
+    let arrayS1 = chuoiS1.split("");
+    let arrayS2 = chuoiS2.split("");
+    for (let i = 0; i < arrayS1.length; i++) {
+        for (let j = 0; j < arrayS2.length; j++) {
+            if (arrayS1[i] === arrayS2[j]) {
+                mangS3.push(arrayS1[i]);
+                arrayS1.splice(i, 1);
+                arrayS2.splice(j, 1);
+                i--;
+                j--;
+            }
+
+        }
+    }
+    alert('Có ' + mangS3.length + '  kí tự chung là:  ' + mangS3);
+
+    demSoLanXuatHien(mangS3)
+
+    function demSoLanXuatHien(mang) {
+        let mangS4 = [];
+        for (let i = 0; i < mang.length; i++) {
+            if (mangS4.indexOf(mang[i] === -1)) {
+                mangS4.push(mang[i]);
+                let dem=0;
+                for (let j = 0; j < mang.length; j++) {
+                    if (mang[i]==mang[j]){
+                        dem++;
+                    }
+                }
+            }
+
+        }
+    }
+</script>
+</body>
+</html>

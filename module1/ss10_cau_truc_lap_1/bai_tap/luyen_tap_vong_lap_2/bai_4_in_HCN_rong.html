@@ -1,0 +1,49 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("nhập cạnh a");
+    let b = prompt("nhập cạnh b");
+    //
+    let text = '';
+    // for (let j = 0; j <= a; j++) {
+    //     text += '*';
+    // }
+    // text += '<br>';
+    //
+    // for (let i = 0; i <= b; i++) {
+    //     text += '*';
+    //     for (let j = 1; j < a; j++) {
+    //         text += '&nbsp&nbsp';
+    //     }
+    //     text += '*<br>';
+    // }
+    // for (let j = 0; j <= a; j++) {
+    //     text += '*';
+    // }
+    // document.write(text);
+
+    <!-- Cách if-->
+
+    let i;
+    let j;
+    for (i = 0; i < b; i++) {
+        for (j = 0; j < a; j++) {
+            if (i === 0 || i === b - 1 || j === 0 || j === a-1) {
+                text += '*&nbsp&nbsp';
+            } else {
+                text += '*&nbsp&nbsp';
+            }
+        }
+        text += '<br>';
+    }
+    document.write(text);
+
+
+</script>
+</body>
+</html>

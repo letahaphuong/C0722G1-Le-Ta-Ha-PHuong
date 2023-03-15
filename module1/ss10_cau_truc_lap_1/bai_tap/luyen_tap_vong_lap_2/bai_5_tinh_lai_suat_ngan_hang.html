@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tienGui = +prompt('Số tiền gửi');
+    let soThang = +prompt('Số tháng gửi:');
+    let laiSuat = +prompt('lãi suất %:');
+    let lai = '';
+    for (let i = 1; i <= soThang; i++) {
+        lai = tienGui * laiSuat / 100;
+        tienGui += lai;
+    }
+    document.write(tienGui);
+
+</script>
+</body>
+</html>

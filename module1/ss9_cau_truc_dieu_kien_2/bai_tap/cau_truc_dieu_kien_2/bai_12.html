@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lãi xuất ngân hàng</title>
+</head>
+<body>
+<script>
+    let money = parseFloat(prompt('Nhập số tiền bạn đã vay:'));
+    let month = parseFloat(prompt('Nhập số tháng bạn đã vay'));
+       let laiSuat = parseFloat(prompt('Nhập lãi suất khi vay:'))
+
+    alert(money*Math.pow((1+laiSuat),month)-money + '   Là số lãi suất bạn phải tra')
+
+</script>
+</body>
+</html>

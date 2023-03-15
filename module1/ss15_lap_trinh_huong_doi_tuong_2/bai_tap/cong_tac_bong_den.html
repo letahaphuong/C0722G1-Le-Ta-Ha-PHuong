@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class BongDen {
+        constructor() {
+            this.trangThai = false;
+        }
+
+        bat() {
+            this.trangThai = true;
+        }
+        tat(){
+            this.trangThai=false;
+        }
+    }
+
+    class CongTac {
+        constructor() {
+            this.trangThai = false;
+            this.den = null;
+        }
+
+        ketNoi(den) {
+            this.den = den;
+        }
+
+        batDen() {
+            this.den.bat();
+            return this.trangThai=true;
+        }
+
+        tatDen() {
+            this.den.tat();
+            return this.trangThai=false;
+        }
+
+    }
+    let bongDen=new BongDen();
+    let congTac=new CongTac();
+    let i=0;
+    while (i<10){
+    congTac.ketNoi(bongDen);
+    document.write(congTac.batDen()+'<br>');
+    document.write(bongDen.trangThai+'<br>')
+    document.write(congTac.tatDen()+'<br>');
+    document.write(bongDen.trangThai+'<br>'+'<br>');
+    i++;
+    }
+
+</script>
+</body>
+</html>

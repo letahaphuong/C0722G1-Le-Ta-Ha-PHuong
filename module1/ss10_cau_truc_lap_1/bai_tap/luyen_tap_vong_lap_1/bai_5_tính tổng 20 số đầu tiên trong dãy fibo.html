@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+    let c;
+    let text = a + '+' + b;
+    let tinhTong;
+    for (let i = 0; i <= 20; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+        text +='+'+ c ;
+    }tinhTong=eval(text);
+    document.write(tinhTong);
+</script>
+</body>
+</html>

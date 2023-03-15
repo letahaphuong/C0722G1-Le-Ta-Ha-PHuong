@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let number = +prompt('Nhập vào chiều dài chủa mảng: ');
+    let array = [];
+    let array1 = [];
+    for (let i = 0; i < number; i++) {
+        array[i] = +prompt('Nhập phần tử trong mảng:')
+    }
+    let number1 = +prompt('Nhập số nguyên n: ');
+    alert(array)
+    alert(myFunction(array, number1));
+
+    function myFunction(array, number) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % number == 0) {
+                array1.push(array[i]);
+            }
+
+        }
+        for (let i = 0; i < array1.length; i++) {
+            for (let j = 1; j < array1.length; j++) {
+                if (array1[i] == array1[j]) {
+                    count++;
+
+                }
+            }
+            if (count !== 2) {
+                array1.splice(i, 1);
+            }
+        }
+        return array1;
+    }
+
+    alert('Số Lượng Phần tử khác nhau trong mảng chia hết cho 2: ' + array1.length)
+</script>
+</body>
+</html>

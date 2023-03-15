@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- 1 phút  đầu = 3000-->
+<!--phút thứ 5 trở đi thì 2000-->
+<!--phút thứ 10 tở đi thì 1000-->
+<script>
+    let time = parseInt(prompt('Nhập số thời gian đã gọi:'))
+    let money;
+    if (time >= 10) {
+        alert('Số tiền bạn phải trả là :' + (money = time * 1000))
+    } else if (time >= 5) {
+        alert('Số tiền bạn phải trả là:' + (money = time * 2000))
+    } else if (time < 5) {
+        alert('Số tiền bạn phải trả là:' + (money = time * 3000))
+    } else {
+        alert('Trường hợp khác')
+    }
+
+</script>
+
+</body>
+</html>

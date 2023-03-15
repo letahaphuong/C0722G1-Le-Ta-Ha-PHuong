@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tuSo = [2, 4, 6];
+    let mauSo = [3, 6, 3];
+    let mang = [];
+    for (let i = 0; i < tuSo.length; i++) {
+        mang[i] = tuSo[i] / mauSo[i];
+    }alert(mang)
+    let lonNhat = [0];
+    let vitri;
+    for (let j = 0; j < mang.length; j++) {
+        if (mang[j] > lonNhat) {
+            lonNhat = mang[j];
+            vitri = [j];
+        }
+    }
+    document.write(lonNhat + '<br>vị trí là' + vitri + '<br>' + tuSo[vitri] + '/' + mauSo[vitri]);
+
+</script>
+</body>
+</html>

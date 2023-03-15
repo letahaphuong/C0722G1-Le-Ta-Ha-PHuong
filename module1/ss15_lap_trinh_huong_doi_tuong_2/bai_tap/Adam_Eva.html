@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class QuaTao {
+        constructor() {
+            this.canNangQuaTao = 11;
+        }
+    }
+
+    class ConNguoi {
+        constructor(ten, gioiTinh, canNang) {
+            this.ten = ten;
+            this.gioiTinh = gioiTinh;
+            this.canNang = canNang;
+        }
+
+        noiChuyen(noi) {
+            return noi;
+        }
+
+        anTao(anTao) {
+            if (anTao.canNangQuaTao > 0) {
+                this.canNang++;
+                anTao.canNangQuaTao--;
+            } else {
+                document.write(this.noiChuyen('<br>'+'Hết táo để ăn'+'<br>'))
+            }
+        }
+
+        kiemTraKhoiLuong(trongLuongQuaTao) {
+            return this.canNang + "<br>" +' Trọng Lượng Quả Táo'+trongLuongQuaTao.canNangQuaTao + '<br>';
+        }
+    }
+
+    let adam = new ConNguoi('Adam', 'Nam', 80);
+    let eva = new ConNguoi('Eva', 'Nữ', 45);
+    let quaTao = new QuaTao();
+    for (let i=0;0<quaTao.canNangQuaTao;i++){
+        adam.anTao(quaTao);
+        document.write('Adam:' + adam.noiChuyen('Ta muốn ăn táo')+'<br>'+'Cân Nặng Của Adam:');
+        document.write(adam.kiemTraKhoiLuong(quaTao));
+        document.write('Eva'+eva.noiChuyen('Ta muốn ăn táo'));
+        eva.anTao(quaTao);
+        document.write(eva.kiemTraKhoiLuong(quaTao)+'<br>');
+    }
+
+
+</script>
+</body>
+</html>

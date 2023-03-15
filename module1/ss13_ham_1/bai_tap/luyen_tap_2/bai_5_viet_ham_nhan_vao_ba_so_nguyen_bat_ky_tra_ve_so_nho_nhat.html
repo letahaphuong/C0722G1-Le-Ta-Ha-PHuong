@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function soSanh(mang) {
+        let giaTriNhoNhat = mang[0];
+        for (let i = 1; i < 3; i++) {
+            if (mang[i] <= giaTriNhoNhat) {
+                giaTriNhoNhat = mang[i];
+            }
+        }
+        return giaTriNhoNhat;
+    }
+
+    let mang1 = []
+    for (let j = 0; j < 3; j++) {
+        mang1[j] = +prompt('Nhập giá trị của mảng:')
+    }
+    alert(soSanh(mang1));
+
+</script>
+</body>
+</html>

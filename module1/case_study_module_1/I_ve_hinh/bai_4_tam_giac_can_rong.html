@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let number = prompt('Nhập số:')
+    // let text = '';
+    // let j;
+    //
+    // for (let i=0;i<=number;i++){
+    //     for (let j=0;j<=2*number-1;j++){
+    //         if (j===0||i===0||){
+    //             text+='*';
+    //         }else {
+    //             text+='&nbsp&nbsp'
+    //         }
+    //
+    //     }text+='<br>';
+    // }document.write(text);
+
+    let number = prompt('Nhập số:')
+    let text = '';
+    for (let i = 1; i <= number; i += 2) {
+        for (let j = 1; j <= number - i; j++) {
+            text += "&nbsp";
+        }
+        for (let z = 1; z <= i; z++) {
+            if ( z === i || i == number || z === 1  ) {
+                text += '*';
+            } else {
+                text += '&nbsp&nbsp';
+            }
+        }
+        text += "<br>";
+    }
+    document.write(text);
+</script>
+</body>
+</html>

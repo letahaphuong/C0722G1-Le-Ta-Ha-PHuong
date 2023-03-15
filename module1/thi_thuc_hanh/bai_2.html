@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = +prompt('Nhập vào mảng số nguyên');
+    let array = [];
+    for (let i = 0; i < number; i++) {
+        array[i] = +prompt('Nhập phần tử trong mảng: ')
+    }
+    alert(myFunction(array));
+
+    function myFunction(array) {
+        let maxNumber = array[0];
+        let minNumber = array[0];
+        let array1 = [];
+        let count;
+        let count1;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] >= maxNumber) {
+                maxNumber = array[i];
+                count = i;
+            }
+        }
+        array1.push(count);
+
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] <= minNumber) {
+                minNumber = array[i];
+                count1 = i;
+            }
+        }
+        array1.push(count1);
+        return array1;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Kiểm tra số ngày trong tháng</h3>
+    <table>
+        <tr>
+            <td>
+                <select id="select" style="width: 100px; text-align: center">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+            </td>
+            <td><input type="submit" value="Check" onclick="kiemTra()"></td>
+        </tr>
+    </table>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function kiemTra() {
+        let selected = parseInt(document.getElementById("select").value);
+        switch (selected) {
+                // break;
+            case 1:
+            case 4:
+            case 6:
+            case 8:
+            case 10:
+            case 12:
+            document.getElementById("ketQua").innerText= "Tháng:" + selected + '  là tháng có 31 ngày';
+            break;
+            case 2:
+            document.getElementById("ketQua").innerText= "Tháng:" + selected + '  là thàng có 28 hoặc 29 ngay';
+            break;
+            case 3:
+            case 5:
+            case 7:
+            case 9:
+            case 11:
+            document.getElementById("ketQua").innerText="Tháng:" + selected + '  là tháng có 30 ngày';
+            break;
+        }
+
+
+    }
+</script>
+</html>

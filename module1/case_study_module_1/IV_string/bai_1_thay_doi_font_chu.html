@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    // Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu
+    // cách liền nhau và bắt đầu mỗi từ phải in hoa. Ví dụ tRuong    TaN   HAI => Truong Tan Hai.
+    //     Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn
+    //     phím, in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.
+    function chuyenVeChuThuong(chuoi) {
+        chuoi = chuoi.toLowerCase();
+        let chuoiMoi = chuoi.split(' ');
+        let chuoiMoi1 = [];
+        let chuoiMoi2 = [];
+        for (let i = 0; i < chuoiMoi.length; i++) {
+            if (chuoiMoi[i] !== '') {
+                chuoiMoi1.push(chuoiMoi[i]);
+            }
+        }
+        for (let i = 0; i < chuoiMoi1.length; i++) {
+            chuoiMoi2.push(chuoiMoi1[i].charAt(0).toUpperCase() + chuoiMoi1[i].slice(1));
+        }
+        return chuoiMoi2.join(' ');
+    }
+
+    function timChieuDai(chuoi1) {
+        let chuoiMoi1=chuyenVeChuThuong(chuoi1).split(' ')
+        let chieuDai = chuoiMoi1[0];
+        for (let i = 0; i < chuoiMoi1.length; i++) {
+            if (chieuDai.length < chuoiMoi1[i].length) {
+                chieuDai = chuoiMoi1[i];
+            }
+        }
+        return chieuDai;
+    }
+
+    let ten='tRuong   TaN   HAI';
+    let ten1=chuyenVeChuThuong(ten);
+    document.write(ten1+ '<br>'+ 'Từ dài nhất: '+ timChieuDai(ten1));
+
+
+</script>
+</body>
+</html>

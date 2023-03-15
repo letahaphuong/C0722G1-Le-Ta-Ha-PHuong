@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Từ Điển Tiếng Anh</h2>
+<form>
+    <input type="text" id="input">
+    <input type="button" value="Dịch" onclick="dich()">
+    <div id="ketQua"></div>
+</form>
+</body>
+<script>
+    var tiengAnh = ['apple', 'banana'];
+    var tiengViet = ['Quả táo', 'Trái chuối'];
+    function dich() {
+        var input = document.getElementById('input').value;
+        for (let i = 0; i < tiengAnh.length; i++) {
+            if (input === tiengAnh[i]) {
+                document.getElementById('ketQua').innerHTML = tiengViet[i];
+                break;
+            } else {
+                document.getElementById('ketQua').innerHTML = 'không có từ nào';
+            }
+        }
+    }
+
+
+</script>
+</html>

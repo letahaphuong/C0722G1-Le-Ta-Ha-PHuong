@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luongNhanVien = +prompt("Nhập số lương");
+    let thue;
+    let luongRong;
+    if (luongNhanVien >= 15000000) {
+        thue = luongNhanVien * 0.2;
+        luongRong = luongNhanVien - thue;
+    } else if (luongNhanVien >= 7000000) {
+        thue = luongNhanVien * 0.1;
+        luongRong = luongNhanVien - thue;
+    } else {
+        thue = luongNhanVien * 0.05;
+        luongRong = luongNhanVien - thue;
+    }
+    alert('Thếu phải đóng là: '+thue);
+    alert('Lương thực lảnh là: '+luongRong);
+</script>
+</body>
+</html>

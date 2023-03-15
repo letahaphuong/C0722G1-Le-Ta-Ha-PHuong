@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--var arrs = [1, 2, 3, 6, 5, 8, 9, 10, 7, 4];-->
+<script>
+    var arrs = [];
+    var soLuong = +prompt('Nhập số lượng số trong mảng');
+    for (let j = 0; j < soLuong; j++) {
+        let num;
+        num = parseInt(prompt("Nhập số phần tử trong mảng"));
+        arrs.push(num);
+    }
+    var ketQua = '';
+    var inputCheck = +prompt('Nhập số V bạn muốn kiểm tra');
+    for (let i = 0; i < arrs.length; i++) {
+        if (inputCheck === arrs[i]) {
+            ketQua += arrs[i];
+            ketQua= 'V is in the array';
+        } else {
+            ketQua = 'V is not in the array'
+        }
+    }
+    alert(ketQua);
+
+</script>
+</body>
+</html>

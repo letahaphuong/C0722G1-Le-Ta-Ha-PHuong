@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    let mang2Chieu = [[1, 2, 3, 4, 5],
+        [6, 11, 7, 8, 9, 10]];
+    alert('Mảng mới là: '+timSoNguyenTo(mang2Chieu)+'\nChiều dài chuổi là: '+timSoNguyenTo(mang2Chieu).length);
+
+    function timSoNguyenTo(mang) {
+        let mangMoi = [];
+
+        for (let i = 0; i < mang.length; i++) {
+            for (let j = 0; j < mang[i][j]; j++) {
+                let dem = 0;
+                for (let k = 1; k <= mang[i][j]; k++) {
+                    if (mang[i][j] % k === 0) {
+                        dem++;
+                    }
+                }
+                if (dem === 2) {
+                    mangMoi.push(mang[i][j]);
+                }
+            }
+
+        }
+        return mangMoi;
+
+    }
+
+
+</script>
+</body>
+</html>

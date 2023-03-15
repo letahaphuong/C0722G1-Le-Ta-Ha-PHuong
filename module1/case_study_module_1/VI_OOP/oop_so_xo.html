@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Xổ Số CODEGYM</h3>
+<input type="text" id="num1">
+<input type="text" id="num2">
+<input type="text" id="num3">
+<input type="text" id="num4">
+<input type="text" id="num5">
+<input type="text" id="num6">
+<br>
+<input type="text" id="random1">
+<input type="text" id="random2">
+<input type="text" id="random3">
+<input type="text" id="random4">
+<input type="text" id="random5">
+<input type="text" id="random6">
+<br>
+<input type="button" onclick="nhapSo()" value="Mua vé">
+<input type="button" onclick="ketQua()" value="Xem kết quả ">
+
+<script>
+    let muaSo = +prompt('Bạn có 2 lựa chọn:\n ' +
+        '1.Bạn muốn tự chọn số.\n' +
+        ' 2.Hệ thống tự RamDom.');
+
+
+    switch (muaSo) {
+        case 1:
+            nhapSo();
+            break;
+        case 2:
+            chonNgauNhien();
+            break;
+    }
+
+    function nhapSo() {
+        let so1 = document.getElementById('num1').value;
+        let so2 = document.getElementById('num2').value;
+        let so3 = document.getElementById('num3').value;
+        let so4 = document.getElementById('num1').value;
+        let so5 = document.getElementById('num5').value;
+        let so6 = document.getElementById('num6').value;
+
+        let mangMua = [so1, so2, so3, so4, so5, so6];
+        return mangMua;
+    }
+
+
+    function chonNgauNhien() {
+        let random1 = Math.floor(Math.random() * 100);
+        let random2 = Math.floor(Math.random() * 100);
+        let random3 = Math.floor(Math.random() * 100);
+        let random4 = Math.floor(Math.random() * 100);
+        let random5 = Math.floor(Math.random() * 100);
+        let random6 = Math.floor(Math.random() * 100);
+        document.getElementById('num1').value = random1;
+        document.getElementById('num2').value = random2;
+        document.getElementById('num3').value = random3;
+        document.getElementById('num4').value = random4;
+        document.getElementById('num5').value = random5;
+        document.getElementById('num6').value = random6;
+        let mangMuaNgauNhien = [random1, random2, random3, random4, random5, random6];
+        return mangMuaNgauNhien;
+    }
+
+    function ketQua() {
+        let ngauNhienKq1 = Math.floor(Math.random() * 100);
+        let ngauNhienKq2 = Math.floor(Math.random() * 100);
+        let ngauNhienKq3 = Math.floor(Math.random() * 100);
+        let ngauNhienKq4 = Math.floor(Math.random() * 100);
+        let ngauNhienKq5 = Math.floor(Math.random() * 100);
+        let ngauNhienKq6 = Math.floor(Math.random() * 100);
+        document.getElementById('random1').value = ngauNhienKq1;
+        document.getElementById('random2').value = ngauNhienKq2;
+        document.getElementById('random3').value = ngauNhienKq3;
+        document.getElementById('random4').value = ngauNhienKq4;
+        document.getElementById('random5').value = ngauNhienKq5;
+        document.getElementById('random6').value = ngauNhienKq6;
+        let mangKetQua = [ngauNhienKq1, ngauNhienKq2, ngauNhienKq3, ngauNhienKq4, ngauNhienKq5, ngauNhienKq6];
+
+        let dem = 0;
+        let so1 = +document.getElementById('num1').value;
+        let so2 = +document.getElementById('num2').value;
+        let so3 = +document.getElementById('num3').value;
+        let so4 = +document.getElementById('num4').value;
+        let so5 = +document.getElementById('num5').value;
+        let so6 = +document.getElementById('num6').value;
+        let mang = [so1, so2, so3, so4, so5, so6];
+        for (let i = 0; i < mangKetQua.length; i++) {
+
+            if (mang[i] === mangKetQua[i]) {
+                dem++;
+            }
+        }
+        switch (dem) {
+            case 6:
+                alert('Chúc mừng bạn đạt giải ĐẶC BIỆT.');
+                break;
+            case 5:
+                alert('Chúc mừng bạn đạt giải Nhất.');
+                break;
+            case 4:
+                alert('Chúc mừng bạn đạt giải Nhì.');
+                break;
+            default:
+                alert('Chúc bạn may mắn lần sau.')
+        }
+    }
+
+</script>
+</body>
+</html>

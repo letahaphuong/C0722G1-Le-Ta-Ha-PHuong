@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mangNgoiSao = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let mangChomSao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function myFunction(str) {
+        for (let i = 0; i < mangNgoiSao.length; i++) {
+            if (str === mangNgoiSao[i]) {
+                return mangChomSao[i];
+            }
+        }
+        if (str!==mangNgoiSao){
+            return 'Không tìm thấy ngôi sao';
+        }
+    }
+    alert(myFunction(input = prompt('Nhập:')))
+
+
+</script>
+</body>
+</html>

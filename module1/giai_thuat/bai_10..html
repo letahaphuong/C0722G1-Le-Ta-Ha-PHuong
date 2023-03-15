@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt('Nhập chuỗi tuỳ ý: ');
+    str = str.split('');
+    for (let i = 0; i < str.length; i++) {
+        document.write(str[i] + '<br>')
+
+    }
+    document.write('Số từ có trong mảng là: ' + str.length.toString())
+
+    for (let i = 0; i < str.length; i++) {
+        let count = 0;
+        for (let j = 0; j < str.length; j++) {
+            if (str[i] == str[j]) {
+                count++;
+                break;
+            }
+        }alert('Ký tự: '+ str[i]+'   xuất hiện: '+count);
+    }
+
+
+
+</script>
+</body>
+</html>

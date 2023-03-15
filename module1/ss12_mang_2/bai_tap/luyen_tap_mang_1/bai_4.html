@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array =[1, 3, 5, 2, 4, 6];
+    let firstIndex = 0;
+    let lastIndex = array.length - 1;
+    while (firstIndex < lastIndex) {
+        let b = array[firstIndex];
+        array[firstIndex] = array[lastIndex];
+        array[lastIndex] = b;
+        firstIndex++;
+        lastIndex--;
+    }
+    document.write('Giá trị sao khi đảo:'+array.join()+'<br>'+'Tổng của chúng là:'+eval(array.join('+')));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>XẾP LOẠI HỌC LỰC</h3>
+<table>
+    <tr>
+        <td>Điểm bài kiểm tra: <input type="text" id="bai_kiem_tra"></td>
+    </tr>
+    <tr>
+        <td>Điểm thi giữa kỳ:<input type="text" id="giua_ky"></td>
+    </tr>
+    <tr>
+        <td>Điểm thi cuối kỳ:<input type="text" id="cuoi_ky"></td>
+    </tr>
+
+</table>
+<button onclick="do_sth()">Kiểm tra!</button>
+<p id="ketQua"></p>
+
+<script>
+    // let a = document.getElementById("bai_kiem_tra").value;
+    // // let b = document.getElementById("giua_ky").value;
+    // // let c = document.getElementById("cuoi_ky").value;
+    // // let result = (a + b + c) / 3;
+    function do_sth() {
+        let a = parseInt(document.getElementById("bai_kiem_tra").value);
+        let b = parseInt(document.getElementById("giua_ky").value);
+        let c = parseInt(document.getElementById("cuoi_ky").value);
+        let trungBinh = ((a + b + c) / 3);
+        if (trungBinh >= 8) {
+            document.getElementById("ketQua").innerText = trungBinh + 'Đã đạt loại giỏi'
+        }else if (trungBinh>=6.5){
+            document.getElementById('ketQua').innerText= trungBinh + 'Đã đạt loại khá'
+        }else if (trungBinh>=5){
+            document.getElementById('ketQua').innerText=trungBinh + 'Đã đạt loại TB'
+        }else {document.getElementById('ketQua').innerText=trungBinh+ 'Bạn học quá tệ!vui lòng học lại'}
+    }
+
+</script>
+</body>
+</html>

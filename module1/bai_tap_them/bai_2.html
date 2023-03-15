@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function chuyenVeChuHoa(thamSo) {
+        thamSo = thamSo.toUpperCase();
+        let thamSoMoi = thamSo.split(' ');
+        let thamSoMoi1 = [];
+        let thamSoMoi2 = [];
+        for (let i = 0; i < thamSoMoi.length; i++) {
+            if (thamSoMoi[i] !== '') {
+                thamSoMoi1.push(thamSoMoi[i])
+            }
+        }
+        // for (let i = 0; i <thamSoMoi1.length; i++) {
+        //     if (thamSoMoi1.length===1){
+        //         return thamSoMoi1;
+        //     }
+        // }
+        for (let i = 0; i < thamSoMoi1.length; i++) {
+                thamSoMoi2.push(thamSoMoi1[i].charAt(0));
+        }
+        return thamSoMoi2;
+    }
+
+    let chuoi = '   object     Oriented     programming ';
+    alert(chuyenVeChuHoa(chuoi).join(''));
+</script>
+</body>
+</html>

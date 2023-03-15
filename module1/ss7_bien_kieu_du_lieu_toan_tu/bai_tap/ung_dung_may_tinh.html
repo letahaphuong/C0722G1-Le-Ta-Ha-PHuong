@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ỨNG DỤNG MÁY TÍNH</title>
+</head>
+    <style>
+        tr td {
+            border: 1px solid cadetblue;
+            border-collapse: collapse;
+            width: 100px;
+            height: 70px;
+            background-color: cadetblue;
+        }
+        p {
+            color: yellow;
+            text-align: center;
+        }
+        input {
+            background-color: darkcyan;
+        }
+        .live { background-color: darkolivegreen;}
+        .orange { background-color: darkorange;}
+        .khaki { background-color: darkkhaki;}
+        .late_blue { background-color: darkslateblue;}
+        h2 {color: blue;}
+        h3 {color: blue;}
+    </style>
+<body>
+    <h2>Máy Tính!</h2>
+    <input type="text" id="so_dau"> <input type="text" id="so_hai"><br>
+    <br>
+    <button class="live" type="button" onclick="cong()">CỘNG</button>
+    <button class="orange" type="button" onclick="tru()">TRỪ</button>
+    <button class="khaki" type="button" onclick="nhan()">NHÂN</button>
+    <button class="late_blue" type="button" onclick="chia()">CHIA</button><br>
+        <br>
+    <h3>Kết Quả:</h3>
+    <table>
+        <tr>
+            <td><p id="ketQua" ></p></td>
+        </tr>
+    </table>
+</body>
+    <script>
+        function cong() {
+            let a = parseInt(document.getElementById("so_dau").value);
+            let b = parseInt(document.getElementById("so_hai").value);
+            // let d = document.getElementById("kq").value;
+            let c;
+            if (a>=0){
+                c = a + b;
+            }
+            document.getElementById("ketQua").innerText =  c;
+        }
+        function tru() {
+            let a = parseInt(document.getElementById("so_dau").value);
+            let b = parseInt(document.getElementById("so_hai").value);
+            // let d = document.getElementById("kq").value;
+            let c;
+            if (a>=0){
+                c = a - b;
+            }
+            document.getElementById("ketQua").innerText =  c;
+        }
+        function nhan() {
+            let a = parseInt(document.getElementById("so_dau").value);
+            let b = parseInt(document.getElementById("so_hai").value);
+            // let d = document.getElementById("kq").value;
+            let c;
+            if (a>=0){
+                c = a * b;
+            }
+            document.getElementById("ketQua").innerText =  c;
+        }
+        function chia() {
+            let a = parseInt(document.getElementById("so_dau").value);
+            let b = parseInt(document.getElementById("so_hai").value);
+            // let d = document.getElementById("kq").value;
+            let c;
+            if (a>=0){
+                c = a / b;
+            }
+            document.getElementById("ketQua").innerText =  c;
+        }
+
+    </script>
+</html>

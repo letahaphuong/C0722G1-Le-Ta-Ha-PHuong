@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var numbers = [1, 2, 3, 4, 5];
+    var max = numbers[0];
+    var sum = 0;
+    var trungBinh = '';
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+        sum += numbers[i];
+        trungBinh=sum/numbers.length;
+    }
+    document.write('giá trị lớn nhất=' + max + '<br>' +'trung bình của các phần tử='+ trungBinh)
+</script>
+</body>
+</html>

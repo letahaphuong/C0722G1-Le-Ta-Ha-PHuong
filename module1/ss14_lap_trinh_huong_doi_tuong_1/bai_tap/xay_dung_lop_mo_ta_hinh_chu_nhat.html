@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    canvas {
+        background-color: darkcyan;
+        border-collapse: collapse;
+        border: black solid 1px;
+    }
+
+</style>
+<body>
+<canvas id="hinhChuNhat" height="500px" width="500px"></canvas>
+<p><span id="ketQua"></span></p>
+<script>
+    // var canvas = document.getElementById('hinhChuNhat')
+
+    class HinhChuNhat {//lớp
+        constructor(chieuDai,chieuRong) { //Xây dựng thuộc tính
+            this.chieuDai = chieuDai;
+            this.chieuRong= chieuRong;
+        }
+
+        tinhDienTich() { //khai báo hành vi(là khai baso hàm)
+            return this.chieuDai * this.chieuRong;
+        }
+
+        tinhChuVi() {  //khai báo hành vi(là khai baso hàm)
+            return (this.chieuDai + this.chieuRong) * 2;
+        }
+
+        veHinhChuNhat() { //khai báo hành vi(là khai baso hàm)
+            document.getElementById('hinhChuNhat').getContext('2d').fillRect(0, 0, this.chieuRong, this.chieuDai);
+            document.getElementById('hinhChuNhat').getContext('2d').strokeRect(0, 0, this.chieuRong, this.chieuDai);
+            // document.getElementById('hinhChuNhat').getContext('2d').clearRect(0, 0, this.height, this.width);
+        }
+    }
+    let chieuDai=+prompt('Nhập chiều Dài của hình chữ nhập (px):');
+    let chieuRong=+prompt('Nhập chiều Rộng của hình chữ nhập (px):');
+
+    let hcn = new HinhChuNhat(chieuDai,chieuRong); //khởi tạo đối tượng mới truyền đối tượng
+    document.getElementById('ketQua').innerHTML=('Diện tích Hình chữ nhật đã vẽ là=  '+hcn.tinhDienTich()+'<brx>'+'Ch' +
+        'u vi Hình chữ nhật đã được vẽ là=  '+hcn.tinhChuVi());
+    hcn.veHinhChuNhat(); //hành vi của đối tượng
+</script>
+</body>
+</html>

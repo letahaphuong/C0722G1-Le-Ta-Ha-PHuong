@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number;
+    do {
+        number = parseInt(prompt('Nhập Số Nguyên n: '));
+    } while (number <= 0||isNaN(number));
+    let text = '';
+    for (let i = 1; i <= number; i++) {
+        if (number % i == 0) {
+            text += i+',';
+        }
+    }
+    document.write(text);
+</script>
+</body>
+</html>
